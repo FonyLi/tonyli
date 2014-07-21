@@ -1,0 +1,311 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> COC 刀剑神域 参战录 </title>
+
+<style>
+	.members_page {margin: 1 1 1 1; min-width:1024px; max-width:1040px;}
+		.members_title_layout {margin: 1 1 1 1; width: 99%;}
+			.members_title {background:#F8F8F8;}
+				.members_title th {text-align:center; width: 200px;}
+		.members_layout {margin: 1 1 1 1; width: 99%; height:80%; overflow:scroll;}
+			.members { background:#F8F8F8;}
+				.members th {text-align:center; width: 200px;}
+				.members td {text-align:left; width: 200px;}
+	
+	.title {text-align:center;}
+	
+	table,th,td
+	{
+		border:1px solid black;
+		border-collapse:collapse;
+	}
+	
+</style>
+
+
+<script type="text/javascript">
+	function changeColor()
+	{
+		var table = document.getElementById("members");
+		
+		//check if win or lose
+
+		for (var i = 0; i < table.rows.length; i++)
+		{
+			var row = table.rows[i];
+			
+
+			var s = row.cells[1].innerHTML;
+				
+			if(s.indexOf("副首领") != -1)
+			{
+				row.style.backgroundColor = "#00FFFF";
+			}
+			else if(s.indexOf("首领") != -1)
+			{
+				row.style.backgroundColor = "#FFFF00";
+			}
+			else if(s.indexOf("长老") != -1)
+			{
+				row.style.backgroundColor = "#66FFCC";
+			}
+			else if(s.indexOf("成员") != -1)
+			{
+				row.style.backgroundColor = "#CCFFFF";
+			}
+		}
+	}
+</script>
+
+</head>
+
+<body onload="changeColor();">
+	<div class="members_page">
+		<a class="title"><h1>成员介绍</h1></a>
+		
+		<div class="members_title_layout">
+			<table class="members_title">
+				<tr>
+				  <th width="20%">ID</th>
+				  <th>身份</th>	
+				  <th>流派</th>
+				  <th>其他</th>		
+				</tr>
+			</table>
+		</div>
+		
+		<div class="members_layout">
+			<table class="members" id="members">
+				<tr>
+				  <th>KIRITO</th>
+				  <td>首领</td>		
+				  <td>屌丝</td>
+				  <td>人送绰号，找羊之王，激情键盘手。。</td>		
+				</tr>
+				<tr>
+				  <th>titan-cjh</th>
+				  <td>副首领</td>		
+				  <td>天胖</td>
+				  <td>变态强大，专门强打对方高防对手</td>
+				</tr>
+				<tr>
+				  <th>安都</th>
+				  <td>副首领</td>		
+				  <td>屌丝，天胖</td>
+				  <td>变态强大，专门强打对方高防对手</td>
+				</tr>
+				<tr>
+				  <th>Thea-o</th>
+				  <td>成员</td>		
+				  <td>女巫石头</td>
+				  <td>新入群，很厉害的打法</td>
+				</tr>
+				<tr>
+				  <th>TheSe7en</th>	
+				  <td>成员</td>		
+				  <td>女巫石头</td>
+				  <td>新入群，很厉害的打法</td>
+				</tr>
+				<tr>
+				  <th>永恒森林</th>
+				  <td>成员</td>		
+				  <td>女巫石头</td>
+				  <td>新入群，很厉害的打法</td>
+				</tr>
+				<tr>
+				  <th>大牛屄</th>
+				  <td>副首领</td>		
+				  <td>皮卡，法师</td>
+				  <td>很厉害的打法，但是有时不怎么引兵哈哈</td>
+				</tr>
+				<tr>
+				  <th>米多饭香</th>
+				  <td>副首领</td>		
+				  <td>屌丝流，野猪流</td>
+				  <td>纯血战斗种族。即将成为首位10本，（不过尽管感觉有点升的早了哈哈。）</td>
+				</tr>
+				<tr>
+				  <th>TuanjieLi</th>
+				  <td>副首领</td>		
+				  <td>屌丝流</td>
+				  <td>不专心打部落战，转行做部落的小网站玩了。。</td>
+				</tr>
+				<tr>
+				  <th>兔儿窝</th>
+				  <td>副首领</td>		
+				  <td>屌丝流，野猪流</td>
+				  <td>纯血战斗种族。超爱捐兵。部落中第一位野猪流</td>
+				</tr>
+				<tr>
+				  <th>泽泽</th>
+				  <td>长老</td>		
+				  <td>天胖流</td>
+				  <td>低调的经常贡献6星海不张扬</td>
+				</tr>
+				<tr>
+				  <th>lts1818</th>
+				  <td>长老</td>		
+				  <td>和泽泽基本一样</td>
+				  <td>低调的经常贡献6星海不张扬</td>
+				</tr>
+				<tr>
+				  <th>CK</th>
+				  <td>长老</td>		
+				  <td>屌丝流，天胖流</td>
+				  <td>伟大的小学生五人组之一哈哈.短期内去迪拜玩了，部落战请假中</td>	
+				</tr>
+				<tr>
+				  <th>kyonstar</th>
+				  <td>成员</td>		
+				  <td>很猛呀</td>
+				  <td>新成员，很喜欢刀剑神域哈哈</td>
+				</tr>
+				<tr>
+				  <th>傻有钱</th>
+				  <td>长老</td>		
+				  <td>和泽泽，lts1818简直就是低调3人组</td>
+				  <td>低调的奢华</td>
+				</tr>
+				<tr>
+				  <th>Tong</th>
+				  <td>成员</td>		
+				  <td>新入群</td>
+				  <td>加油加油</td>
+				</tr>
+				<tr>
+				  <th>小胡的村庄</th>
+				  <td>成员</td>		
+				  <td>屌丝</td>
+				  <td>伟大的小学生五人组之一哈哈</td>
+				</tr>
+				<tr>
+				  <th>Arcadiaos</th>
+				  <td>长老</td>		
+				  <td>继承了titan的各种打法,所谓打虎亲兄弟，上阵父子兵</td>
+				  <td>伟大的小学生五人组之一哈哈</td>
+				</tr>
+				<tr>
+				  <th>释尽繁华</th>
+				  <td>成员</td>		
+				  <td></td>
+				  <td>猛将一枚</td>
+				</tr>
+				<tr>
+				  <th>未来想太好</th>
+				  <td>成员</td>		
+				  <td>新入群</td>	
+				  <td>猛将一枚</td>
+				</tr>
+				<tr>
+				  <th>史莱克</th>
+				  <td>长老</td>		
+				  <td></td>
+				  <td>猛将一枚</td>
+				</tr>
+				<tr>
+				  <th>Trampler</th>
+				  <td>成员</td>		
+				  <td>新入群</td>
+				  <td>加油加油~~</td>
+				</tr>
+				<tr>
+				  <th>更萌更可爱</th>
+				  <td>成员</td>		
+				  <td>新入群</td>	
+				  <td>猛将一枚</td>
+				</tr>
+				<tr>
+				  <th>我不是人2</th>
+				  <td>长老</td>		
+				  <td></td>
+				  <td>加油加油~~</td>
+				</tr>
+				<tr>
+				  <th>残局</th>
+				  <td>成员</td>		
+				  <td>新入群</td>
+				  <td>加油加油</td>
+				</tr>
+				<tr>
+				  <th>刘馨升</th>
+				  <td>成员</td>		
+				  <td>新入群</td>	
+				  <td>猛将一枚</td>
+				</tr>
+				<tr>
+				  <th>哆哆j</th>
+				  <td>成员</td>		
+				  <td>新入群</td>	
+				  <td>加油加油</td>
+				</tr>
+				<tr>
+				  <th>紫禁之巅Y</th>
+				  <td>成员</td>		
+				  <td>新入群</td>	
+				  <td>猛将一枚</td>
+				</tr>
+				<tr>
+				  <th>神刘</th>
+				  <td>成员</td>		
+				  <td></td>
+				  <td>伟大的小学生五人组之一哈哈</td>
+				</tr>
+				<tr>
+				  <th>穿着帆布</th>
+				  <td>成员</td>		
+				  <td>新入群</td>	
+				  <td>猛将一枚</td>
+				</tr>
+				<tr>
+				  <th>Kiew-of-栲</th>
+				  <td>成员</td>		
+				  <td>新入群</td>	
+				  <td>加油加油~~</td>
+				</tr>
+				<tr>
+				  <th>暴君King2</th>
+				  <td>成员</td>		
+				  <td>升级中</td>	
+				  <td>猛将一枚，积极争取长老身份中~~</td>
+				</tr>
+				<tr>
+				  <th>YHH</th>
+				  <td>成员</td>		
+				  <td>新入群</td>	
+				  <td>猛将一枚</td>
+				</tr>
+				<tr>
+				  <th>布鲁打</th>
+				  <td>成员</td>		
+				  <td>新入群</td>	
+				  <td>猛将一枚，加油加油！</td>
+				</tr>
+				<tr>
+				  <th>STF皇都</th>
+				  <td>成员</td>		
+				  <td>新入群</td>	
+				  <td>猛将一枚，加油加油！</td>
+				</tr>
+				<tr>
+				  <th>Azaleayy</th>
+				  <td>成员</td>		
+				  <td></td>	
+				  <td>猛将一枚，加油加油！</td>
+				</tr>
+				<tr>
+				  <th>LD~霹雳</th>
+				  <td>成员</td>		
+				  <td>新入群</td>	
+				  <td>加油加油！</td>
+				</tr>
+			</table>
+
+		</div>
+	</div>
+</div>
+
+</body>
+
+</html>

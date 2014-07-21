@@ -1,0 +1,587 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> COC 刀剑神域 参战录 </title>
+
+<style>	
+
+	.records_page {margin: 1 1 1 1; }
+		.records_mainpage {margin: 1 1 1 1; height: 800px; min-width:1024px; max-width:1440px; }
+			.records {margin: 1 1 1 1; height: 800px; width: 60%; float: left; border:1px solid black; background:#F8F8F8;}
+				.records_table_head {margin: 2 2 2 2;table-layout:fixed;}
+				.records_table_body {margin: 1 1 1 1;width: 99%; height:80%; overflow:scroll;}
+					.records_table {margin: 1 1 1 1;width: 99%; height:100%; table-layout:fixed;}
+			.record_other {margin: 1 1 1 1; height: 800px; width: 38%; margin-left: 62%; border:1px solid black; background:#F8F8F8;}
+				.comments {margin: 1 1 1 1; width: 99%; height:50%; float: top; border:1px solid black; background:#F0F0F0 }
+					.comments_layout {margin: 1 1 1 1; width: 99%; height:85%; overflow:scroll;}
+					.campaign {margin: 1 1 1 1; border:1px solid black;}
+				.introduction {margin: 1 1 1 1; width: 99%; height:48%; border:1px solid black; background:#F0F0F0 }
+					.introduction_table {margin: 1 1 1 1; width: 99%; height: 85%; background:#F8F8F8;}
+						.introduction_table th {width: 17%; text-align:center;}
+				
+	.title {text-align:center;}
+
+	table,th,td
+	{
+		border:1px solid black;
+		border-collapse:collapse;
+	}
+
+	th,td
+	{
+		text-align: center;
+		width: 90px;
+	}
+	
+</style>
+
+<script type="text/javascript">
+	function changeColor()
+	{
+		var table = document.getElementById("records_table_head");
+		
+		//check if win or lose
+		var row = table.rows[1];
+		
+		var s = null;
+		for (var j = 1; j < row.cells.length - 1; j++)
+		{
+			s = row.cells[j].innerHTML;
+			
+			if(s.indexOf("胜") != -1)
+			{
+				row.cells[j].style.backgroundColor = "#00FFFF";
+			}
+			else if(s.indexOf("负") != -1)
+			{
+				row.cells[j].style.backgroundColor = "red";
+			}
+		}
+		
+		//check fight times
+		table = document.getElementById("records_table");
+		
+		for (var i = 0; i < table.rows.length; i++)
+		{
+			row = table.rows[i];
+			for (var j = 1; j < row.cells.length; j++)
+			{
+				s = row.cells[j].innerHTML;
+				
+				if(s == "1")
+				{
+					row.cells[j].style.backgroundColor = "yellow";
+				}
+				else if(s == "0")
+				{
+					row.cells[j].style.backgroundColor = "red";
+				}
+			}
+		}
+	}
+</script>
+</head>
+
+<body onload="changeColor();">
+<div class="records_page">
+	<aside class="records_mainpage">
+		<div class="records">
+			<a class="title"><h1>参战录</h1></a>
+			<table class="records_table_head" id="records_table_head" style="width:350px">
+				<tr>
+				  <th>战序</th>
+				  <th>1</th>		
+				  <th>2</th>
+				  <th>3</th>
+				  <th>4</th>
+				  <th>5</th>
+				  <th>6</th>
+				  <th>7</th>
+				</tr>
+				<tr>
+				  <th>战绩</th>
+				  <th>胜 42:24</th>		
+				  <th>负 57:64</th>
+				  <th>胜 78:54</th>
+				  <th>胜 76:75</th>
+				  <th>胜 87:81</th>
+				  <th>胜 74:69</th>
+				  <th></th>
+				</tr>
+				<tr>
+				  <th>结束日</th>
+				  <th>7月7号</th>		
+				  <th>7月9号</th>
+				  <th>7月11号</th>
+				  <th>7月13号</th>
+				  <th>7月15号</th>
+				  <th>7月17号</th>
+				  <th>7月19号</th>
+				</tr>
+			</table>
+			
+			<div class="records_table_body">
+				<table class="records_table" id="records_table" style="width:350px">
+
+					<tr>
+					  <th>KIRITO</th>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>titan-cjh</th>
+					  <td>未入群</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>安都</th>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>Thea-o</th>
+					  <td></td>		
+					  <td></td>
+					  <td></td>		
+					  <td></td>
+					  <td>未入群</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>TheSe7en</th>
+					  <td>未入群</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>1</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>永恒森林</th>
+					  <td></td>		
+					  <td>未入群</td>
+					  <td>2</td>		
+					  <td>0</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>大牛屄</th>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>米多饭香</th>
+					  <td></td>		
+					  <td>未入群</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>TuanjieLi</th>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>兔儿窝</th>
+					  <td>1</td>		
+					  <td>1</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>泽泽</th>
+					  <td>2</td>		
+					  <td>1</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>lts1818</th>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>CK</th>
+					  <td>未入群</td>		
+					  <td>1</td>
+					  <td>请假</td>		
+					  <td>请假</td>
+					  <td>请假</td>		
+					  <td>请假</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>kyonstar</th>
+					  <td>未</td>		
+					  <td></td>
+					  <td></td>		
+					  <td>未入群</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>傻有钱</th>
+					  <td>0</td>		
+					  <td>2</td>
+					  <td>1</td>		
+					  <td>1</td>
+					  <td>2</td>		
+					  <td>1</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>Tong</th>
+					  <td></td>		
+					  <td></td>
+					  <td></td>		
+					  <td>未入群</td>
+					  <td>1</td>		
+					  <td>0</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>小胡的村庄</th>
+					  <td>1</td>		
+					  <td>2</td>
+					  <td>1</td>		
+					  <td>2</td>
+					  <td>1</td>		
+					  <td>0</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>Arcadiaos</th>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>1</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>释尽繁华</th>
+					  <td></td>		
+					  <td></td>
+					  <td>未入群</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>未来想太好</th>
+					  <td></td>		
+					  <td></td>
+					  <td>未入群</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>史莱克</th>
+					  <td>2</td>		
+					  <td>0</td>
+					  <td>0</td>		
+					  <td>0</td>
+					  <td>0</td>		
+					  <td>0</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>Trampler</th>
+					  <td></td>		
+					  <td></td>
+					  <td></td>		
+					  <td></td>
+					  <td>未入群</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>更萌更可爱</th>
+					  <td></td>		
+					  <td></td>
+					  <td>未入群</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>0</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>我不是人2</th>
+					  <td>1</td>		
+					  <td>1</td>
+					  <td>1</td>		
+					  <td>0</td>
+					  <td>2</td>		
+					  <td>0</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>残局</th>
+					  <td></td>		
+					  <td></td>
+					  <td></td>		
+					  <td></td>
+					  <td></td>		
+					  <td>未入群</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>刘馨升</th>
+					  <td>1</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>哆哆j</th>
+					  <td></td>		
+					  <td></td>
+					  <td></td>		
+					  <td>未入群</td>
+					  <td>2</td>		
+					  <td>0</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>紫禁之巅Y</th>
+					  <td></td>		
+					  <td>未入群</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>神刘</th>
+					  <td>未入群</td>		
+					  <td>2</td>
+					  <td>1</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>0</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>穿着帆布</th>
+					  <td>未入群</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>Kiew-of-栲</th>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>1</td>		
+					  <td>2</td>
+					  <td>0</td>		
+					  <td>0</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>暴君King2</th>
+					  <td>未入群</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>YHH</th>
+					  <td></td>		
+					  <td></td>
+					  <td>未入群</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>布鲁打</th>
+					  <td></td>		
+					  <td>未入群</td>
+					  <td>1</td>		
+					  <td>2</td>
+					  <td>1</td>		
+					  <td>1</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>STF皇都</th>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>2</td>		
+					  <td>2</td>
+					  <td>1</td>		
+					  <td>1</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <td>Azaleayy</th>
+					  <td>1</td>		
+					  <td>0</td>
+					  <td>0</td>		
+					  <td>2</td>
+					  <td>1</td>		
+					  <td>0</td>
+					  <td></td>
+					</tr>
+					<tr>
+					  <th>LD~霹雳</th>
+					  <td></td>		
+					  <td></td>
+					  <td></td>		
+					  <td></td>
+					  <td></td>		
+					  <td>未入群</td>
+					  <td></td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+		
+		
+		<div class="record_other">
+			<aside class="record_other_layout">
+				<div class="comments">
+					<a class="title"><h3>最新战况</h3></a>
+					
+					<div class="comments_layout">
+						<div class="campaign">
+							<a><h1>战役六</h1></br></br>
+								这次参战情况不佳，虽然胜了</br>
+								但是是险胜啊，大家加油：）</br>
+							</a></br>
+						</div>
+						
+						</br></br>
+						<div class="campaign">
+							<a><h1>战役五</h1></br></br>
+								这次我们参战54次，算是平均水平，</br>
+								但是打出87星的高星数！</br>
+								这是部落史上的最高星数！我们果然太猛了</br>
+								但是不能自大。</br>
+								部落人员变动越来越小，趋于稳定中。超级赞</br>
+								再打几次部落之后建议休息一两天哈哈。要有张有弛~~</br>
+								另外警告史莱克哦，连续4次没打了哦。加油~</br>
+							</a></br>
+						</div>
+						
+						</br></br>
+						<div class="campaign">
+							<a><h1>战役四</h1></br></br>
+
+								在刚刚结束的第四次部落战中，</br>
+								我方猛将，受命危难之中，在最后一小时内，</br>
+								titan，米多，繁华，aza，arca，ki，连续一波流碾压了对手的阵地，摧残了对手的心灵</br>
+								几乎全部是三星完胜，最终绝地翻盘。</br>
+								arca的最终战使我方以一星之优势神奇逆转</br>
+								还有啥比这更开心的事情了么，没有！</br>
+								特此嘉奖诸君，每人一朵小红花~</br>
+							</a></br>
+						</div>
+					</div>
+				</div>
+				
+				<div class = "introduction">
+					<a class="title"><h1> 状态说明</h1></a>
+					<table class="introduction_table" >
+						<tr>
+						  <th>未入群</th>
+						  <td>表示那次战争之前还没有加入部落。从此之后便是兄弟</td>
+						</tr>
+						<tr>
+						  <th>请假</th>
+						  <td>战争开始之前和大家打过招呼请假一次，暂时不参加下次部落战</td>
+						</tr>
+						<tr>
+						  <th>杯数不够</th>
+						  <td>因为部落战是取最大的5的倍数，所以有些同学等级或者杯数不够没有参加，没关系哦</td>
+						</tr>
+						<tr>
+						  <th>2</th>
+						  <td>表示当次部落战的2次参战机会全部使用，超级赞~</td>
+						</tr>
+						<tr>
+						  <th>1</th>
+						  <td>表示只打了一场，标成黄色，一般没关系，工作学习时间紧大家都理解，但是还是尽量打2次的好。</td>
+						</tr>
+						<tr>
+						  <th>0</th>
+						  <td>表示完全没有打，而且没有事先请假。</td>
+						</tr>
+						<tr>
+						  <th>不用心</th>
+						  <td>哈哈，表示打的不用心。这个判断太主观了，目前不会使用这个状态。</td>
+						</tr>
+					</table>
+
+				</div>
+			</aside>
+		</div>
+	</aside>
+
+</div>
+
+</body>
+
+</html>
