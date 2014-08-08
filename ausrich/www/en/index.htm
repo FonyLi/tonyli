@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0022)http://www.ausrich.com/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Ausrich</title>
+    <meta name="keywords" content="study aboard, housing loan, mortgage, Ausrich">
+    <meta name="description" content="Ausrich,study aboard, housing loan, mortgage, best choice of international education services provider, call: 0425260707">
+    <link rel="stylesheet" href="../content/default.css" media="screen">
+    <link href="../content/public.css" rel="stylesheet">
+
+    <script src="../files/jquery-1.x.js"></script>
+    <script src="../files/jcarousellite_1.0.1.js"></script>
+    <script src="../files/jtabber.js"></script>
+    <script src="../files/jquery.lazyload.min.js"></script>
+    <script src="../files/jquery-public.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="./ausrich_files/index.css">
+	<script type="text/javascript" src="./ausrich_files/s"></script>
+</head>
+
+<body style="">
+
+<!--top nav-->
+<div id="topnav">
+    <div class="w1000">
+        <ul>
+            <li class="topnav-li" style="padding-left: 0;"><a href="http://www.ausrich.com" id="sethomepage" looyu_bound="1">Ausrich</a></li>
+            <li class="topnav-li"><a href="http://www.ausrich.com/about" target="_blank" looyu_bound="1">About US</a></li>
+            <li class="topnav-li"><a href="http://www.ausrich.com/partners" looyu_bound="1">Partner Services</a></li>
+           
+        </ul>
+        <div class="topform">
+            <span class="ico-w23"></span>
+
+            <a class="loginbtn_a login_hid Indexloginbox cboxElement" id="toplogin" href="http://www.ausrich.com/#poploginbox" looyu_bound="1">Login</a>
+            <a class="top_a_reg login_hid" target="_blank" href="http://passport.ausrich.com/register" looyu_bound="1">Register</a>
+            <!-- after login, only show logout, hide the login and register-->
+            <a class="exit loginbtn_a login_show" style="display: none;" onclick="exitSys();" href="javascript:void(0);" looyu_bound="1">Logout</a>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            type: "Post",
+            url: "/userhelp/getuser",
+            dataType: 'text',
+            success: function (html) {
+                if (html != "0") {
+                    $(".login_hid").hide();
+                    $(".login_show").show();
+                }
+            }
+        });
+    });
+
+    function exitSys() {
+        $.ajax({
+            type: "POST",
+            url: "/userhelp/exit",
+            dataType: "text",
+            success: function (html) {
+                window.location.reload();
+            }
+        });
+    }
+</script>
+
+<div id="top_logo" class="w1000 clearfix">
+    <a class="logo_imga" href="www.ausrich.com" target="_blank"><img src="./en_files/ausrich_logo.png" width="216" height="44" alt="Ausrich"></a>
+    <div class="top_search">
+        <div class="search_news">
+            <span class="search_type">Search</span><span class="arrowhead"></span>
+            <div class="search_menu"><input type="hidden" id="jumpurl" value="http://www.ausrich.com/home/searchAll">
+                <ul>
+                    <li onclick="$(&#39;#jumpurl&#39;).val(&#39;http://www.ausrich.com/home/searchAll&#39;)">Search All</li>
+                    <li class="selected" onclick="$(&#39;#jumpurl&#39;).val(&#39;http://www.ausrich.com/school/search&#39;)">Study Aboard</li>
+                    <li onclick="$(&#39;#jumpurl&#39;).val(&#39;http://www.ausrich.com/house/search&#39;)">Housing load</li>
+                    <li onclick="$(&#39;#jumpurl&#39;).val(&#39;http://www.ausrich.com/other/search&#39;)">Other</li>                 
+                </ul>
+            </div>
+        </div> 
+        <input type="hidden" id="EnterClick" value="SiteSearch">
+        <input class="searchtxt" name="search" type="text" id="search" onfocus="$(&#39;#EnterClick&#39;).val(&#39;SiteSearch&#39;)" value="migration" x-webkit-speech="" lang="zh-CN">
+            <input class="searchBtn imgbg" type="button" value="" onclick="searchjump();">
+            <input type="hidden" id="searchtypeid" value="news">
+    
+    </div>
+    <div id="top_tel">
+        
+        <span>
+            <b style="float:left">Customer Service&nbsp;</b><img src="./en_files/icon_clock.gif" style="width:15px;text-align:right;float:left"><b>&nbsp;&nbsp;8:00~24:00</b>
+        </span>
+        <h2>0425260707</h2>
+    </div>
+</div>
+<script>
+    function searchjump() {
+        if ($("#search").val() == "Migration") {
+            window.location.href = "http://www.ausrich/special/migration/";
+        } else {
+            window.location.href = $('#jumpurl').val() + "?Keyword=" + $("#search").val();
+        }
+       
+    }
+
+    $(document).keypress(function (e) {
+        var code;
+        if (!e) {
+            e = window.event;
+        }
+        if (e.keyCode) {
+            code = e.keyCode;
+        }
+        else if (e.which) {
+            code = e.which;
+        }
+        if (code == 13) {
+			switch ($("#EnterClick").val()) {
+				case "SiteSearch": {
+					searchjump();
+				}break;
+				case "SchoolSearch": {
+					search();
+				} break;
+			default:
+			}
+        }
+    });
+</script>
+
+<div id="header-nav">
+    <div class="w1000">
+        <ul class="headernav-ul">
+            <li class="headernav-li" name="#menu-cglx"><a class="headernav-lia" target="_blank" href="http://www.ausrich.com/migration/school" looyu_bound="1">Study Aboard<span class="arrowhead"></span></a></li>
+			
+            <li class="headernav-li" name="#menu-yypx"><a class="headernav-lia" target="_blank" href="http://www.ausrich.com/migration" looyu_bound="1">Migration<span class="arrowhead"></span></a></li>
+			
+            <li class="headernav-li" name="#menu-hwyx"><a class="headernav-lia" target="_blank" href="http://www.ausrich.com/migration/house" looyu_bound="1">Housing load<span class="arrowhead"></span></a></li>
+			
+            <li class="headernav-li" name="#menu-hzbx"><a class="headernav-lia" target="_blank" href="http://www.ausrich.com/migration/other" looyu_bound="1">Other<span class="arrowhead"></span></a></li>
+            
+            <div class="clear"></div>
+        </ul>
+
+        <div id="menu-study-aboard" class="pulldownBox" style="display: none;">
+            <div class="pulldownl">
+                <h3 class="p-title-h3">I want to go</h3>
+                <ul>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/nsw" looyu_bound="1">NSW</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/qld" looyu_bound="1">QLD</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/sa" looyu_bound="1">SA</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/tas" looyu_bound="1">TAS</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/vic" looyu_bound="1">VIC</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/wa" looyu_bound="1">WA</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/act" looyu_bound="1">ACT</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/nt" looyu_bound="1">NT</a></li>
+                    
+                    <div class="clear"></div>
+                </ul>
+            </div>
+			
+            <div class="pulldownm">
+                <h3 class="p-title-h3">I want to know</h3>
+                <ul class="p_wxlj_ul">
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/news/search?newstypeid=1" looyu_bound="1">news</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/news/search?newstypeid=2" looyu_bound="1">school</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/news/search?newstypeid=3" looyu_bound="1">major</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/news/search?newstypeid=4" looyu_bound="1">visa</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/news/search?newstypeid=5" looyu_bound="1">rank</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/news/search?newstypeid=6" looyu_bound="1">prepare</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/news/search?newstypeid=7" looyu_bound="1">plan</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/news/search?newstypeid=9" looyu_bound="1">map</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/news/search?newstypeid=10" looyu_bound="1">bonus</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div id="menu-language-training" class="pulldownBox" style="display: none;">
+            <div class="pulldownl">
+                <h3 class="p-title-h3">I want to be enrolled in</h3>
+                <ul class="p_wxd_ul">
+                    <li class="pulldown-li"><a target="_blank" href="" looyu_bound="1">IELTS</a></li>
+                    
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="pulldownm">
+                <h3 class="p-title-h3">I want to know</h3>
+                <ul class="p_wxlj_ul">
+                    <li class="pulldown-li"><a href="http://www.91lx.com/beforetest.html?utm_source=eic&utm_medium=shouye&utm_campaign=a&utm_content=a&utm_term=a" target="_blank" looyu_bound="1">quiz</a></li>
+                    <li class="pulldown-li"><a href="http://www.91lx.com/onlineclass.html?utm_source=eic&utm_medium=shouye&utm_campaign=a&utm_content=a&utm_term=a" target="_blank" looyu_bound="1">internet classes</a></li>
+                    <li class="pulldown-li"><a href="http://www.91lx.com/beikao/ielts.html?utm_source=eic&utm_medium=shouye&utm_campaign=a&utm_content=a&utm_term=a" target="_blank" looyu_bound="1">preparation strategy</a></li>
+                    
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="pulldownr">
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div id="menu-hwyx" class="eic-pulldownBox" style="display: none;">
+            <div class="pulldownl">
+                <h3 class="p-title-h3">I want to get load in</h3>
+                <ul class="p_housing_load_ul">
+                    <li class="pulldown-li"><a target="_blank" href="http://ausrich.com/house/au" looyu_bound="1">Australia</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://ausrich.com/house/other" looyu_bound="1">other</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="pulldownm">
+                <h3 class="p-title-h3">I want to know</h3>
+                <ul class="p_wxlj_ul">
+                    <li class="pulldown-li"><a target="_blank" href="http://studytour.eic.org.cn/news?filter.type=28" looyu_bound="1">students sharing</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://studytour.eic.org.cn/news?filter.type=30" looyu_bound="1"> tourist attractions</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://studytour.eic.org.cn/news?filter.type=31" looyu_bound="1">video</a></li>
+
+                    <li class="pulldown-li"><a target="_blank" href="http://studytour.eic.org.cn/news?filter.type=34" looyu_bound="1">visa</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://studytour.eic.org.cn/news?filter.type=35" looyu_bound="1">prepare</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div id="menu-hzbx" class="pulldownBox" style="display: none;">
+            <div class="pulldownl">
+                <h3 class="p-title-h3">I want to know</h3>
+                <ul class="p_hzbxwxd_ul">
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/other/linen" looyu_bound="1">Oriental Linen Industry</a></li>
+                </ul>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+	</div>
+   
+    
+<link href="./en_files/index(1).css" rel="stylesheet" type="text/css">
+<link href="http://www.ausrich.com/Content/colorbox.css" rel="stylesheet">
+
+<script src="../files/bespoke.js"></script>
+
+
+
+<div id="index_l1" class="w1000">
+    <a class="l1_left_a" href="http://www.ausrich.com/school/index" target="_blank" looyu_bound="1">
+        <b class="ico_school_b imgbg"></b>global universities
+    </a>
+    <a class="l1_left_a" href="http://www.ausrich.com/scholarship/search" target="_blank" looyu_bound="1">
+        <b class="ico_scholarship_b imgbg"></b>scholarship
+    </a>
+
+</div>
+
+<div class="eic_index_expo w1000">
+    <div class="news-latest">
+        <h3 class="eic_blueh3"><span>Latest News</span></h3>
+        <dl class="news-visa-dl">
+            <dd><a href="http://www.ausrich.com/events/101.html" target="_blank" looyu_bound="1">Susan's visa is approved!</a></dd>
+            <dd><a href="http://www.ausrich.com/events/102.html" target="_blank" looyu_bound="1">John get housing load</a></dd>
+        </dl>
+        <dl class="news-visa-dl mt10">
+            <dd><a href="http://www.ausrich.com/events/103.html" target="_blank" looyu_bound="1">Tom choose NTS</a></dd>
+        </dl>
+    </div>
+	
+    <div class="news-main">
+        <a class="news-tit" target="_blank" href="http://www.ausrich.com/special/2014_enrolment" looyu_bound="1">2014 colleges enrolment</a>
+        <div class="news-box">
+            <ul>
+                <li class="news-con"><a target="_blank" href="http://www.ausrich.com/special/ca_colleges_tour_2014/" looyu_bound="1">refund 60% tuition </a></li>
+                <li class="news-con"><a target="_blank" href="http://www.ausrich.com/special/ca_colleges_tour_2014/" looyu_bound="1">migrate immediately after getting Master Degree</a></li>
+                <li class="news-con"><a target="_blank" href="http://www.ausrich.com/special/ca_colleges_tour_2014/" looyu_bound="1">enroll in IVY without HSC</a></li>
+                <li class="news-con"><a target="_blank" href="http://www.ausrich.com/special/ca_colleges_tour_2014/" looyu_bound="1">Strategy explained by Governor</a></li>
+            </ul>
+            <a class="news-btncxbm" target="_blank" href="http://qide.looyu.com/chat/chat/p.do?c=32383&f=108841&g=35315" looyu_bound="1">inquire on line</a>
+        </div>
+        <ul class="news-activities">
+            <li class="city-tit"><a href="http://www.ausrich.com/News/Detail/LnSruI5N306eUjZrcOVdNQ" target="_blank" looyu_bound="1"><span class="colorred">8.24.-10.24.</span><br>how to apply for enrolment</a></li>
+            <li class="city-tit"><a href="http://www.ausrich.com/special/2014_nz_colleges_consult/" target="_blank" looyu_bound="1"><span class="colorred">8.16.-8.24.</span><br>NZ colleges</a></li>
+             <li class="city-tit" style="margin-right:0"><a href="http://www.ausrich.com/special/us_south_California_enroll/" target="_blank" looyu_bound="1"><span class="colorred">8.2-8.10.</span><br>NSW colledgs</a></li>
+
+            <li class="city-tit" style="margin-right:0"><a href="http://www.ausrich.com/special/uk_guardian_ranking_2015/" target="_blank" looyu_bound="1"><span class="colorred">2015 The Guardian Ranking</span><br>British Colleges Ranking</a></li>
+        </ul>
+    </div>
+
+    <div class="exposign">
+        <h3 class="exposign-h3">Ausrich Special Offer to top 10 Colleges, up to 20!</h3>
+
+        <div class="sign-box">
+            <input id="eduname" type="hidden" value="au_ielts_Admission">
+            <input id="promotionCode" type="hidden" value="">
+            <p class="exposign-p"><label for="name">name:</label><input id="name" type="text" class="exposign-input"></p>
+            <p class="exposign-p"><label for="phone">mobile:</label><input id="telephone" type="text" class="exposign-input"></p>
+            <p class="exposign-p"><label for="city">city:</label><select name="city" id="city" class="exposign-select">
+                                                                   <option value="0" selected="selected"> please select</option>
+                                                                   <option value="1">Sydney</option>
+                                                                   <option value="9">Melbourne</option>
+
+                                                               </select></p>
+            <p class="exposign-p"><label for="email">email:</label><input id="email" type="text" class="exposign-input"></p>
+            <p class="exposign-p" style="text-align:center;"><input id="InterViewButton" class="interview_btn" type="button" onclick="addUsersMess();" value="book on line" onmouseover="this.className = &#39;interview_btn2&#39;;" onmouseout="this.className = &#39;interview_btn&#39;;"></p>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+<a class="submit_OK" href="http://www.ausrich.com/#au_special_offer_submit"></a>
+
+
+<div style="display:none">
+  <div id="eic-popgaokao-ok" class="gaokaobox">
+    <div class="tx-top">
+      <span>Notice</span><a href="http://www.ausrich.com/#" class="pop_close"></a>
+    </div>
+    <div class="tx-main">
+      <div style="text-align:center"><h3 class="main-title">commit successfully</h3></div>
+      <p class="gaokaookinfo" id="p_gaokaookinfo">recommended country: GB</p>
+      <p class="color_gray2">You will be touched soon by our professional analyst</p>
+    </div>
+  </div>
+</div>   
+ 
+<script src="./ausrich_files/eic_lrtk.js"></script>
+<script src="./ausrich_files/Provincialleague.js"></script>
+
+<script src="./ausrich_files/jquery.colorbox.js"></script>
+<script src="./ausrich_files/subscribeCommon.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $(".activity_yuyue_a").click(function() {
+            $(this).subscribeBind("http://passport0.eic.org.cn/subscribe/",
+                "http://www.ausrich.com/subsdfsdfsd20140527/");
+        });
+
+    });
+
+</script>
+    
+<div id="eic_footer_show" class="w1000">
+    <a href="javascript:void(0)"><b class="imgbg"></b></a>
+</div>
+
+<div id="eic_footer_copyright">
+    
+    <div class="clear"></div>
+        <p class="copyright_p">
+            Copyright © 2003-2014 Ausrich www.Ausrich.com All Rights Reserved   
+			<style> a.ltjFriendLink {	cursor:text; text-decoration:none; color:#999999;}  a.ltjFriendLink:hover {text-decoration:none; color:#999999;}</style>            -&nbsp;
+			-&nbsp;
+				<a class="ltjFriendLink" href="http://www.ausrich.com">s</a>
+				<a class="ltjFriendLink" href="http://www.ausrich.com">i</a>
+				<a class="ltjFriendLink" href="http://www.ausrich.com">t</a>
+				<a class="ltjFriendLink" href="http://www.ausrich.com">e</a>&nbsp;
+				<a class="ltjFriendLink" href="http://www.ausrich.com">b</a>
+				<a class="ltjFriendLink" href="http://www.ausrich.com">y</a> 
+				<a href="http://www.ausrich.com" target="_blank" title="TonyLi Web Design Sydney"><font class="" style="color:Gray;">TonyLi</font></a>
+        </p>
+
+    </div>
+</div>
+
+<script src="./ausrich_files/jquery.cookie.js"></script>
+<script type="text/javascript" charset="utf-8" src="../files/buttonLite.js"></script>
+
+<div id="totop">
+    <ul id="totop_ul">
+        <li class="totopli" id="fhdb_li" style="visibility: hidden;"><div class="totop_litxt" style="display: none;">go back to Top</div></li>
+        <li class="totopli" id="zxwd_li" onclick="doyoo.util.openChat(&#39;g=35315&#39;);doyoo.util.accept();return false;"><div class="totop_litxt" style="display: none;">online<br>inquiry</div></li>
+        <li class="totopli" id="yycs_li"><div class="totop_litxt" style="display: none;">phone<br>inquiry</div></li>
+        <li class="totopli" id="vjlq_li"><div class="totop_litxt" style="display: none;">share</div></li>
+        <li class="totopli" id="sewm_li"><div class="totop_litxt" style="display: none;">QR code</div></li>
+        <li class="totopli" id="jyfk_li" onclick="window.open(&#39;http://www.ausrich.com&#39;);"><div class="totop_litxt" style="display: none;">back to Top</div></li>
+
+    </ul>
+    <div id="gotoptel" class="eic_gotophidden" style="display: none;">
+        <div id="gotoptelinner">          
+            <div>
+                <span class="eic_gotoptelinfo_span">
+                    <b class="eic_gotoptelinfo_spanb" style="float:left;">global inquiry </b>
+                    <img style="width:15px;text-align:right;float:left" src="./ausrich_files/icon_clock.gif">
+                    <b class="eic_gotoptelinfo_spanb">  8:00~24:00</b>
+                </span>
+                <h2 class="eic_gotoptelinfo_h2">0425260707</h2>
+            </div>
+        </div>
+        <div class="triangle-right"></div>
+    </div>
+
+    <div id="gotopfenxiang" class="gotophidden" style="display: none;">
+        <div id="gotopfenxianginner">
+            <span class="fl">share to</span>
+            <div class="bshare-custom"><div class="bsPromo bsPromo2"></div>
+                <div class="bsPromo bsPromo2"></div>
+                <a title="share to facebook" class="bshare-qzone"></a>
+            </div>
+        </div>
+        <div class="triangle-right"></div>
+    </div>
+    <div id="twowm" class="gotophidden" style="display: none;">
+        <div id="twowminner">
+            <img src="../files/eic_twowm.jpg" width="120" height="120" alt="QR code" title="QR code">
+        </div>
+        <div class="triangle-right"></div>
+    </div>
+</div>
+
+<div style="display: none">
+    <div id="eic_poploginbox" class="eic_popbox">
+        <div class="tx_top">
+            <img class="pic" src="../files/ausrich_logo380.gif" width="380" height="37"><a href="http://www.ausrich.com/#" class="eic_popbox_close"></a>
+        </div>
+        <div class="tx_main" onfocus="$(&#39;#EnterClick&#39;).val(&#39;&#39;)">
+            <iframe src="../files/loginpart.htm" scrolling="no" frameborder="0" width="380" height="350"></iframe>
+        </div>
+    </div>
+</div>
+
+<script src="./ausrich_files/jquery.colorbox.js"></script>
+
+<script type="text/javascript">
+    function refreshimage() {
+        $('#yzm').attr('src', '/UserHelp/GetValidateCode?t=08%2F03%2F2014%2013%3A34%3A08');
+    }
+    $(function () {
+
+        //popup
+        //$("#eic_pop_loginbox").colorbox({ href: "http://localhost:18510/account/loginpart", scrolling: false, opacity: 0.2, fixed: true });
+        //$("#eic_pop_regbox").colorbox({ inline: true, initialWidth: 740, initialHeight: 397, scrolling: false, opacity: 0.2 });
+        //$(".Indexloginbox").colorbox({ inline: true, initialWidth: 380, initialHeight: 209, scrolling: false, opacity: 0.2 });
+        //$(".eic_popbox .eic_popbox_close").click(function () { jQuery().colorbox.close(); });
+        jBoxPopUp({ mainDiv: ".Indexloginbox", inline: true, initialWidth: 380, initialHeight: 209, scrolling: false, opacity: 0.2 });
+    });
+
+    function Login() {
+
+        $.ajax({
+            type: "Post",
+            url: "/userhelp/login",
+            data: "LoginName=" + $("#userName").val() + "&Password=" + $("#userPwd").val() + "&vCode=" + $("#vCode").val(),
+            dataType: 'text',
+            success: function (html) {
+                if (html == "True") {
+                    window.location.reload();
+                } else if (html == "False") {
+                    alert("incorrect password");
+                } else {
+                    alert(html);
+                }
+            },
+            error: function (html) {
+                alert("System error");
+            }
+        });
+    }
+
+</script>
+	
+    <script type="text/javascript">
+        $(function () {
+            $("#timeMachineDiv").timemachineBind(2);
+        });
+    </script>
+
+    <script src="./ausrich_files/jquery.placeholder.js"></script>
+	
+    <script>
+        $('input, textarea').placeholder();
+    </script>
+</body>
+</html>
