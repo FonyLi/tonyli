@@ -16,8 +16,8 @@
     <script src="../files/jquery.lazyload.min.js"></script>
     <script src="../files/jquery-public.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="./ausrich_files/index.css">
-	<script type="text/javascript" src="./ausrich_files/s"></script>
+	<link rel="stylesheet" type="text/css" href="../files/index.css">
+	<script type="text/javascript" src="../files/s"></script>
 </head>
 
 <body style="">
@@ -71,16 +71,16 @@
 </script>
 
 <div id="top_logo" class="w1000 clearfix">
-    <a class="logo_imga" href="www.ausrich.com" target="_blank"><img src="./en_files/ausrich_logo.png" width="216" height="44" alt="Ausrich"></a>
+    <a class="logo_imga" href="www.ausrich.com" target="_blank"><img src="./en_files/logo.png" width="216" height="44" alt="Ausrich"></a>
     <div class="top_search">
         <div class="search_news">
             <span class="search_type">Search</span><span class="arrowhead"></span>
             <div class="search_menu"><input type="hidden" id="jumpurl" value="http://www.ausrich.com/home/searchAll">
                 <ul>
-                    <li onclick="$(&#39;#jumpurl&#39;).val(&#39;http://www.ausrich.com/home/searchAll&#39;)">Search All</li>
-                    <li class="selected" onclick="$(&#39;#jumpurl&#39;).val(&#39;http://www.ausrich.com/school/search&#39;)">Study Aboard</li>
-                    <li onclick="$(&#39;#jumpurl&#39;).val(&#39;http://www.ausrich.com/house/search&#39;)">Housing load</li>
-                    <li onclick="$(&#39;#jumpurl&#39;).val(&#39;http://www.ausrich.com/other/search&#39;)">Other</li>                 
+                    <li onclick="$(&#39;#jumpurl&#39;).val(&#39;http://www.ausrich.com/en/home/searchAll&#39;)">Search All</li>
+                    <li class="selected" onclick="$(&#39;#jumpurl&#39;).val(&#39;http://www.ausrich.com/en/school/search&#39;)">Study Aboard</li>
+                    <li onclick="$(&#39;#jumpurl&#39;).val(&#39;http://www.ausrich.com/en/house/search&#39;)">Housing load</li>
+                    <li onclick="$(&#39;#jumpurl&#39;).val(&#39;http://www.ausrich.com/en/other/search&#39;)">Other</li>                 
                 </ul>
             </div>
         </div> 
@@ -136,29 +136,51 @@
 <div id="header-nav">
     <div class="w1000">
         <ul class="headernav-ul">
-            <li class="headernav-li" name="#menu-cglx"><a class="headernav-lia" target="_blank" href="http://www.ausrich.com/migration/school" looyu_bound="1">Study Aboard<span class="arrowhead"></span></a></li>
+			<li class="headernav-li" name="#menu-travel">
+				<a class="headernav-lia" target="_blank" href="http://www.ausrich.com/en/travel">Travel
+					<span class="arrowhead"></span>
+				</a>
+			</li>
+            <li class="headernav-li" name="#menu-school">
+				<a class="headernav-lia" target="_blank" href="http://www.ausrich.com/en/school">Study Aboard
+					<span class="arrowhead"></span>
+				</a>
+			</li>
 			
-            <li class="headernav-li" name="#menu-yypx"><a class="headernav-lia" target="_blank" href="http://www.ausrich.com/migration" looyu_bound="1">Migration<span class="arrowhead"></span></a></li>
+            <li class="headernav-li" name="#menu-migration">
+				<a class="headernav-lia" target="_blank" href="http://www.ausrich.com/en/migration" looyu_bound="1">Migration
+					<span class="arrowhead"></span>
+				</a>
+			</li>
 			
-            <li class="headernav-li" name="#menu-hwyx"><a class="headernav-lia" target="_blank" href="http://www.ausrich.com/migration/house" looyu_bound="1">Housing load<span class="arrowhead"></span></a></li>
+            <li class="headernav-li" name="#menu-house">
+				<a class="headernav-lia" target="_blank" href="http://www.ausrich.com/en/house" looyu_bound="1">Housing load
+					<span class="arrowhead"></span>
+				</a>
+			</li>
 			
-            <li class="headernav-li" name="#menu-hzbx"><a class="headernav-lia" target="_blank" href="http://www.ausrich.com/migration/other" looyu_bound="1">Other<span class="arrowhead"></span></a></li>
+            <li class="headernav-li" name="#menu-other">
+				<a class="headernav-lia" target="_blank" href="http://www.ausrich.com/en/other" looyu_bound="1">Other
+					<span class="arrowhead"></span>
+				</a>
+			</li>
             
             <div class="clear"></div>
         </ul>
 
-        <div id="menu-study-aboard" class="pulldownBox" style="display: none;">
+		<link rel="stylesheet" href="../content/css/index/travel.css" media="screen">
+		<div id="menu-travel" class="pulldownBox" style="display: none;">
             <div class="pulldownl">
                 <h3 class="p-title-h3">I want to go</h3>
                 <ul>
-                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/nsw" looyu_bound="1">NSW</a></li>
-					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/qld" looyu_bound="1">QLD</a></li>
-					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/sa" looyu_bound="1">SA</a></li>
-					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/tas" looyu_bound="1">TAS</a></li>
-					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/vic" looyu_bound="1">VIC</a></li>
-					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/wa" looyu_bound="1">WA</a></li>
-					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/act" looyu_bound="1">ACT</a></li>
-					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/study/state/nt" looyu_bound="1">NT</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/travel/state/nsw" looyu_bound="1">NSW</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/travel/state/qld" looyu_bound="1">QLD</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/travel/state/sa" looyu_bound="1">SA</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/travel/state/tas" looyu_bound="1">TAS</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/travel/state/vic" looyu_bound="1">VIC</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/travel/state/wa" looyu_bound="1">WA</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/travel/state/act" looyu_bound="1">ACT</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/travel/state/nt" looyu_bound="1">NT</a></li>
                     
                     <div class="clear"></div>
                 </ul>
@@ -166,7 +188,42 @@
 			
             <div class="pulldownm">
                 <h3 class="p-title-h3">I want to know</h3>
-                <ul class="p_wxlj_ul">
+                <ul class="p_want_to_know_ul">
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/travel/search?newstypeid=1" looyu_bound="1">hot spots</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/travel/search?newstypeid=2" looyu_bound="1">weather</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/travel/search?newstypeid=3" looyu_bound="1">note</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/travel/search?newstypeid=4" looyu_bound="1">map</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/travel/search?newstypeid=5" looyu_bound="1">hotels</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/travel/search?newstypeid=6" looyu_bound="1">event</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/travel/search?newstypeid=7" looyu_bound="1">coupon</a></li>
+
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+		
+		<link rel="stylesheet" href="../content/css/index/school.css" media="screen">
+        <div id="menu-school" class="pulldownBox" style="display: none;">
+            <div class="pulldownl">
+                <h3 class="p-title-h3">I want to go</h3>
+                <ul>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/study/state/nsw" looyu_bound="1">NSW</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/study/state/qld" looyu_bound="1">QLD</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/study/state/sa" looyu_bound="1">SA</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/study/state/tas" looyu_bound="1">TAS</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/study/state/vic" looyu_bound="1">VIC</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/study/state/wa" looyu_bound="1">WA</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/study/state/act" looyu_bound="1">ACT</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/en/study/state/nt" looyu_bound="1">NT</a></li>
+                    
+                    <div class="clear"></div>
+                </ul>
+            </div>
+			
+            <div class="pulldownm">
+                <h3 class="p-title-h3">I want to know</h3>
+                <ul class="p_want_to_know_ul">
                     <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/news/search?newstypeid=1" looyu_bound="1">news</a></li>
                     <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/news/search?newstypeid=2" looyu_bound="1">school</a></li>
                     <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/news/search?newstypeid=3" looyu_bound="1">major</a></li>
@@ -182,22 +239,23 @@
             <div class="clear"></div>
         </div>
 
-        <div id="menu-language-training" class="pulldownBox" style="display: none;">
+		<link rel="stylesheet" href="../content/css/index/migration.css" media="screen">
+        <div id="menu-migration" class="pulldownBox" style="display: none;">
             <div class="pulldownl">
-                <h3 class="p-title-h3">I want to be enrolled in</h3>
-                <ul class="p_wxd_ul">
-                    <li class="pulldown-li"><a target="_blank" href="" looyu_bound="1">IELTS</a></li>
+                <h3 class="p-title-h3">I want to become</h3>
+                <ul class="p_migration_ul">
+                    <li class="pulldown-li"><a target="_blank" href="" looyu_bound="1">PR</a></li>
+					<li class="pulldown-li"><a target="_blank" href="" looyu_bound="1">Citizen</a></li>
                     
                     <div class="clear"></div>
                 </ul>
             </div>
             <div class="pulldownm">
                 <h3 class="p-title-h3">I want to know</h3>
-                <ul class="p_wxlj_ul">
-                    <li class="pulldown-li"><a href="http://www.91lx.com/beforetest.html?utm_source=eic&utm_medium=shouye&utm_campaign=a&utm_content=a&utm_term=a" target="_blank" looyu_bound="1">quiz</a></li>
-                    <li class="pulldown-li"><a href="http://www.91lx.com/onlineclass.html?utm_source=eic&utm_medium=shouye&utm_campaign=a&utm_content=a&utm_term=a" target="_blank" looyu_bound="1">internet classes</a></li>
-                    <li class="pulldown-li"><a href="http://www.91lx.com/beikao/ielts.html?utm_source=eic&utm_medium=shouye&utm_campaign=a&utm_content=a&utm_term=a" target="_blank" looyu_bound="1">preparation strategy</a></li>
-                    
+                <ul class="p_want_to_know_ul">
+                    <li class="pulldown-li"><a href="" target="_blank" looyu_bound="1">visa type</a></li>
+					<li class="pulldown-li"><a href="" target="_blank" looyu_bound="1">qualification</a></li>
+					<li class="pulldown-li"><a href="" target="_blank" looyu_bound="1">calculate scores</a></li>
                     <div class="clear"></div>
                 </ul>
             </div>
@@ -206,34 +264,33 @@
             <div class="clear"></div>
         </div>
 
-        <div id="menu-hwyx" class="eic-pulldownBox" style="display: none;">
+		<link rel="stylesheet" href="../content/css/index/house.css" media="screen">
+        <div id="menu-house" class="pulldownBox" style="display: none;">
             <div class="pulldownl">
                 <h3 class="p-title-h3">I want to get load in</h3>
                 <ul class="p_housing_load_ul">
-                    <li class="pulldown-li"><a target="_blank" href="http://ausrich.com/house/au" looyu_bound="1">Australia</a></li>
-                    <li class="pulldown-li"><a target="_blank" href="http://ausrich.com/house/other" looyu_bound="1">other</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/house/au" looyu_bound="1">Australia</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/house/other" looyu_bound="1">other</a></li>
                     <div class="clear"></div>
                 </ul>
             </div>
             <div class="pulldownm">
                 <h3 class="p-title-h3">I want to know</h3>
-                <ul class="p_wxlj_ul">
-                    <li class="pulldown-li"><a target="_blank" href="http://studytour.eic.org.cn/news?filter.type=28" looyu_bound="1">students sharing</a></li>
-                    <li class="pulldown-li"><a target="_blank" href="http://studytour.eic.org.cn/news?filter.type=30" looyu_bound="1"> tourist attractions</a></li>
-                    <li class="pulldown-li"><a target="_blank" href="http://studytour.eic.org.cn/news?filter.type=31" looyu_bound="1">video</a></li>
-
-                    <li class="pulldown-li"><a target="_blank" href="http://studytour.eic.org.cn/news?filter.type=34" looyu_bound="1">visa</a></li>
-                    <li class="pulldown-li"><a target="_blank" href="http://studytour.eic.org.cn/news?filter.type=35" looyu_bound="1">prepare</a></li>
+                <ul class="p_want_to_know_ul">
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/news?filter.type=34" looyu_bound="1">average price</a></li>
+                    <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/news?filter.type=35" looyu_bound="1">qualification</a></li>
+					<li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/news?filter.type=35" looyu_bound="1">suggestions</a></li>
                     <div class="clear"></div>
                 </ul>
             </div>
             <div class="clear"></div>
         </div>
 
-        <div id="menu-hzbx" class="pulldownBox" style="display: none;">
+		<link rel="stylesheet" href="../content/css/index/other.css" media="screen">
+        <div id="menu-other" class="pulldownBox" style="display: none;">
             <div class="pulldownl">
                 <h3 class="p-title-h3">I want to know</h3>
-                <ul class="p_hzbxwxd_ul">
+                <ul class="p_other_ul">
                     <li class="pulldown-li"><a target="_blank" href="http://www.ausrich.com/other/linen" looyu_bound="1">Oriental Linen Industry</a></li>
                 </ul>
             </div>
@@ -317,7 +374,7 @@
 
 
 <div style="display:none">
-  <div id="eic-popgaokao-ok" class="gaokaobox">
+  <div id="popgaokao-ok" class="gaokaobox">
     <div class="tx-top">
       <span>Notice</span><a href="http://www.ausrich.com/#" class="pop_close"></a>
     </div>
@@ -329,11 +386,11 @@
   </div>
 </div>   
  
-<script src="./ausrich_files/eic_lrtk.js"></script>
-<script src="./ausrich_files/Provincialleague.js"></script>
+<script src="../files/lrtk.js"></script>
+<script src="../files/Provincialleague.js"></script>
 
-<script src="./ausrich_files/jquery.colorbox.js"></script>
-<script src="./ausrich_files/subscribeCommon.js"></script>
+<script src="../files/jquery.colorbox.js"></script>
+<script src="../files/subscribeCommon.js"></script>
 <script type="text/javascript">
     $(function() {
         $(".activity_yuyue_a").click(function() {
@@ -345,11 +402,11 @@
 
 </script>
     
-<div id="eic_footer_show" class="w1000">
+<div id="footer_show" class="w1000">
     <a href="javascript:void(0)"><b class="imgbg"></b></a>
 </div>
 
-<div id="eic_footer_copyright">
+<div id="footer_copyright">
     
     <div class="clear"></div>
         <p class="copyright_p">
@@ -368,7 +425,7 @@
     </div>
 </div>
 
-<script src="./ausrich_files/jquery.cookie.js"></script>
+<script src="../files/jquery.cookie.js"></script>
 <script type="text/javascript" charset="utf-8" src="../files/buttonLite.js"></script>
 
 <div id="totop">
@@ -386,7 +443,7 @@
             <div>
                 <span class="eic_gotoptelinfo_span">
                     <b class="eic_gotoptelinfo_spanb" style="float:left;">global inquiry </b>
-                    <img style="width:15px;text-align:right;float:left" src="./ausrich_files/icon_clock.gif">
+                    <img style="width:15px;text-align:right;float:left" src="../files/icon_clock.gif">
                     <b class="eic_gotoptelinfo_spanb">  8:00~24:00</b>
                 </span>
                 <h2 class="eic_gotoptelinfo_h2">0425260707</h2>
@@ -407,7 +464,7 @@
     </div>
     <div id="twowm" class="gotophidden" style="display: none;">
         <div id="twowminner">
-            <img src="../files/eic_twowm.jpg" width="120" height="120" alt="QR code" title="QR code">
+            <img src="../files/twowm.jpg" width="120" height="120" alt="QR code" title="QR code">
         </div>
         <div class="triangle-right"></div>
     </div>
@@ -424,7 +481,7 @@
     </div>
 </div>
 
-<script src="./ausrich_files/jquery.colorbox.js"></script>
+<script src="../files/jquery.colorbox.js"></script>
 
 <script type="text/javascript">
     function refreshimage() {
@@ -470,7 +527,7 @@
         });
     </script>
 
-    <script src="./ausrich_files/jquery.placeholder.js"></script>
+    <script src="../files/jquery.placeholder.js"></script>
 	
     <script>
         $('input, textarea').placeholder();

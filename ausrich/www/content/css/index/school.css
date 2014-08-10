@@ -1,0 +1,56 @@
+
+	/*school*/
+#menu-school .pulldownl {
+    width: 80px;
+    border: 0 none;
+    height: 261px;
+    height: 284px\9;
+}
+
+#menu-school .pulldownm {
+    width: 160px;
+    border-left: 1px dashed #3176aa;
+    padding-left: 12px;
+    height: 261px;
+    height: 284px\9;
+}
+
+#menu-school .pulldownr {
+    width: 547px;
+    _width: 500px;
+    padding-left: 12px;
+    height: 261px;
+    height: 284px\9;
+}
+
+#menu-school ul.p_migration_ul li {
+    width: 90px;
+}
+
+#menu-school .p-rightdd {
+    width: 440px;
+    *width: 416px;
+    _width: 340px;
+    margin-left: 0px;
+    overflow: auto;
+    zoom: 1;
+}
+
+#menu-school .w130 {
+    width: 130px;
+}
+
+    #menu-school .w130 ul.p_migration_ul li {
+        width: 50px;
+    }
+
+#menu-school .pulldownr .p-rightdt {
+    width: 90px;
+    *width: 92px;
+    margin-left: 0;
+}
+
+#menu-school .p-rightddli {
+    margin-right: 3px;
+    *margin-right: 2px;
+}

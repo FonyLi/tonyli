@@ -1,0 +1,146 @@
+
+<!-- saved from url=(0072)http://passport.eic.org.cn/account/loginpart?from=http://www.eic.org.cn/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link href="http://passport.eic.org.cn/Content/eic_tongxing.css" rel="stylesheet">
+<link href="http://www.eic.org.cn/Content/default.css" rel="stylesheet">
+<script src="jquery"></script>
+
+
+<script src="eic.js"></script>
+<script src="jquery-public.js"></script>
+
+<script>
+    $.fn.appendCaptcha = function () {
+        this.empty();
+        var $img = $('<img alt="点击获取验证码" src="" title="点击获取验证码"/>');
+        $img.click(
+            function () {
+                $(this).attr('src', '/captcha/' + '?key=' + Math.random());
+            }
+        );
+        this.append($img);
+    };
+    $('.captchaContainer').appendCaptcha();
+    $('.captchaInput').one('focus', function () {
+        var $captcha = $(this).parent().parent().parent().find('span.captchaContainer > img');
+        $captcha.trigger('click');
+    });
+    $('.captchaTrigger').click(function () {
+        $($(this).parent().find('span.captchaContainer > img')).trigger('click');
+    });
+    $($('.captchaTrigger')[0]).trigger('click');
+</script>
+</head><body style=""><div class="tongxingbox" style="margin-top: 10px">
+    <!--登录部分开始-->
+    <div class="tx_main">
+<form action="http://passport.eic.org.cn/account/loginpart" method="post" novalidate="novalidate"><input id="From" name="From" type="hidden" value="http://www.eic.org.cn/">            <ul class="formsummary" style="margin-left: 0px">
+                <li style="display: none;" id="errorText">
+                    <label class="dt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                    <div class="dd">
+                        <span class="err info" id="errorEText" style="display: none;">
+                            <span class="field-validation-valid" data-valmsg-for="errorText" data-valmsg-replace="true"></span>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <label class="dt" for="Mobile">帐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：</label>
+                    <div class="dd">
+                        <input autocomplete="off" class="txt" data-val="true" data-val-regex="请准确填写您的手机号" data-val-regex-pattern="^1[3,5,8]\d{9}$" data-val-required="请输入您的注册手机号" id="Mobile" name="Mobile" placeholder="请输入您的注册手机号" type="text" value="">
+                        <span class="err info" style="display: none;">
+                            <span class="field-validation-valid" data-valmsg-for="Mobile" data-valmsg-replace="true"></span>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <label class="dt">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+                    <div class="dd">
+                        <input class="txt" data-val="true" data-val-required="请输入帐号密码" id="Password" name="Password" type="password"><a href="http://passport.eic.org.cn/account/forget_password" target="_blank">忘记密码？</a>
+                        <span class="err info" style="display: none;">
+                            <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                        </span>
+                    </div>
+
+                </li>
+                <li>
+                    <label class="dt">验 证 码：</label>
+                    <div class="dd">
+                        <input class="code txt captchaInput" data-val="true" data-val-required="请输入图片验证码信息" id="Captcha" name="Captcha" placeholder="不区分大小写" type="text" value="">
+                        <span class="code">
+                            <span class="captchaContainer"><img alt="点击获取验证码" src="saved_resource" title="点击获取验证码"></span>
+                            <a class="blue captchaTrigger" href="javascript:void(0)">看不清？</a>
+                        </span>
+                        <span class="err info" style="display: none;">
+                            <span class="field-validation-valid" data-valmsg-for="Captcha" data-valmsg-replace="true"></span>
+                        </span>
+                    </div>
+                </li>
+                <li>
+                    <label class="dt">&nbsp;</label>
+                    <div class="dd">
+                        <input class="radiotxt" data-val="true" data-val-required="IsRemember 字段是必需的。" id="IsRemember" name="IsRemember" type="checkbox" value="true"><input name="IsRemember" type="hidden" value="false"><label class="check">下次自动登录</label>
+
+                    </div>
+                </li>
+                
+                <li>
+                    <label class="dt">&nbsp;</label>
+                    <div class="dd">
+                        <input class="userBtn" type="submit" value="登录" onmouseover=" this.className = &#39;userBtn2&#39;; " onmouseout=" this.className = &#39;userBtn&#39;; ">
+                        <div class="reg_href"><a href="javascript:void(0)" onclick="top.location.href = &#39;/register/mobile&#39; ">新用户注册，请点击这里！</a></div>
+                    </div>
+                </li>
+            </ul>
+</form>        <!--登录部分结束-->
+    </div>
+</div>
+<script src="jqueryval"></script>
+
+<script>
+    $(function () {
+        if ($.trim($("#errorEText").text()) != "") {
+            $("#errorText").show();
+            $("#errorEText").show();
+        } else {
+            $("#errorText").hide();
+            $("#errorEText").hide();
+        }
+
+        $(".err, .info").each(function (i, n) {
+            var that = $(n);
+            if ($.trim(that.text()) != "") {
+                that.show();
+            } else {
+                that.hide();
+            }
+        });
+    });
+</script>
+<script src="jquery.placeholder.js"></script>
+<script>
+    $('input, textarea').placeholder();
+</script>
+<script>
+    $.fn.appendCaptcha = function () {
+        this.empty();
+        var $img = $('<img alt="点击获取验证码" src="" title="点击获取验证码"/>');
+        $img.click(
+            function () {
+                $(this).attr('src', '/captcha/' + '?key=' + Math.random());
+            }
+        );
+        this.append($img);
+    };
+    $('.captchaContainer').appendCaptcha();
+    $('.captchaInput').one('focus', function () {
+        var $captcha = $(this).parent().parent().parent().find('span.captchaContainer > img');
+        $captcha.trigger('click');
+    });
+    $('.captchaTrigger').click(function () {
+        $($(this).parent().find('span.captchaContainer > img')).trigger('click');
+    });
+    $($('.captchaTrigger')[0]).trigger('click');
+</script>
+<span style="display:none;" class="referrer">
+        <div></div>
+        <div>passport.eic.org.cn</div>
+        <div>http://www.eic.org.cn/</div>
+    </span></body></html>
