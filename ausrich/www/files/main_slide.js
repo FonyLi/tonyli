@@ -17,16 +17,16 @@
 	var runid;
 	autoPlay();
 	
-	//自动滚动开始
+
 	function autoPlay() { 
 	  runid = setInterval(run, distim);
 	}; 
-	//自动滚动停止
+
 	function autoStop() { 
 	  window.clearInterval(runid); 
 	};
 	function initEvent() {
-		//点击图片则停止动画鼠标事件绑定 
+		//stop binding mouse event when click the image
 		$(".piece").hover(function(){
 			  autoStop();
 			},
@@ -34,7 +34,7 @@
 			  autoPlay();
 		}); 
 		
-		//点击小导航		
+		//click small nav		
 		$("li",focusbtns).click(function(){
 			 var clickcount = $("li",focusbtns).index(this)+1;
 			 var step =  Math.abs(clickcount-cur);
@@ -69,7 +69,7 @@
 			 autoPlay();
 		});
 	}
-	//执行自动滚动
+	//run slide automatically
 	function run() {
 		$("li",focusbtns).eq(cur-1).removeClass(hoverclass);
 		lidom.each(function() {	
@@ -82,5 +82,4 @@
 		if(cur>=count){cur=1;}else{cur++;}		
 		$("li",focusbtns).eq(cur-1).addClass(hoverclass);		
 	}
-	
 })();; 
