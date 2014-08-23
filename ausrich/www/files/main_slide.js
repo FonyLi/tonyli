@@ -82,4 +82,5 @@
 		if(cur>=count){cur=1;}else{cur++;}		
 		$("li",focusbtns).eq(cur-1).addClass(hoverclass);		
 	}
+	
 })();; 
