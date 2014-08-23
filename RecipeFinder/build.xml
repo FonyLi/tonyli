@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="RecipeFinder" default="package" basedir=".">
+	<property name="src" value="src\main\java"/>
+	<property name="dest" value="classes"/>
+	<property name="lib" value="libs"/>
+	<property name="config" value="config"/>
+	<property name="data" value="data"/>
+	<property name="jar_name" value="${dest}\recipe-finder.jar"/>
+	<property name="zip_name" value="${dest}\recipe-finder.zip"/>
+	<property name="temp" value="temp\RecipeFinder"/>
+	
+	<path id="libs">  
+		<fileset dir="${lib}">  
+			<include name="**/*.jar"/>  
+		</fileset>  
+	</path> 
+	
+	<target name="clean">
+		<delete dir="${dest}" />
+		<delete dir="${temp}" />
+	</target>
+	
+	<target name="init">
+		<ant target="clean" />
+		<mkdir dir="${dest}"/>
+	</target>
+	
+	<target name="compile" depends="init">
+		<javac target="1.6" srcdir="${src}" destdir="${dest}" debug="true">
+			<compilerarg line="-encoding UTF-8"/>  
+			<classpath refid="libs"/>
+		</javac>
+	</target>
+	
+	<target name="build" depends="compile">
+		<jar jarfile="${jar_name}" basedir="${dest}"/>
+	</target>
+	
+	<target name="package" depends="build">
+		<mkdir dir="${temp}" />
+		<mkdir dir="${temp}/${config}" />
+		<mkdir dir="${temp}/${lib}" />
+		<mkdir dir="${temp}/${data}" />
+		
+		<copy todir="${temp}/${lib}">
+			<fileset dir=".\${lib}">
+				<include name="**/*.jar"/>  
+			</fileset>
+			<fileset dir=".\${dest}">  
+				<include name="**/*.jar"/>  
+			</fileset>
+		</copy>
+		
+		<copy todir="${temp}/${config}">
+			<fileset dir="${config}">
+				<include name="*.properties" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${temp}/${data}">
+			<fileset dir="${data}">
+				<include name="*.csv" />
+				<include name="*.json" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${temp}">
+			<fileset dir=".">
+				<include name="*.bat" />
+				<include name="*.sh" />
+				<include name="*.txt" />
+			</fileset>
+		</copy>
+		
+		<zip destfile="${zip_name}" basedir="${temp}" />
+		<delete dir="${temp}" />
+	</target>
+
+</project>
