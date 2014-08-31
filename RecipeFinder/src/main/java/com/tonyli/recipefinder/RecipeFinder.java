@@ -3,21 +3,26 @@ package com.tonyli.recipefinder;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.hibernate.Session;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import com.tonyli.recipefinder.dao.FridgeDAO;
+import com.tonyli.recipefinder.dao.ds.Fridge;
+import com.tonyli.recipefinder.dao.ds.Material;
+import com.tonyli.recipefinder.dao.ds.Recipe;
+import com.tonyli.recipefinder.dao.ds.Unit;
 
 /**
  * This class is  main class of the whole project.
@@ -51,8 +56,8 @@ public class RecipeFinder{
 		unvailableCalendar.set(2000, 1, 1); //set it in the past
 	}
 	
-	public static final Date INIT_USEBY = futureCalendar.getTime();
-	public static final Date UNAVAILABLE_USEBY = unvailableCalendar.getTime();
+	public static final Date INIT_USEBY = new java.sql.Date(futureCalendar.getTime().getTime());
+	public static final Date UNAVAILABLE_USEBY = new java.sql.Date(unvailableCalendar.getTime().getTime());
 	
 	public RecipeFinder() {}
 	
@@ -123,7 +128,48 @@ public class RecipeFinder{
 	
 	private boolean addFoodIntoFridge(String fileName)
 	{		
-		return fridge.addItems(fileName);
+		BufferedReader input = null;
+		
+		Session session = RecipeFinderServer.getSessionFactory().openSession();
+		
+		if (session == null)
+			return false;
+		try
+		{
+			input = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
+			
+			String oneItem = null;
+			
+			FridgeDAO fridgeDAO = new FridgeDAO(session);
+			while((oneItem = input.readLine()) != null)
+			{
+				fridgeDAO.addItem(new Material(oneItem));
+			}
+		}
+		catch (Exception e)
+		{
+			logger.error("add items exception", e);
+			return false;
+		}
+		finally
+		{
+			if (input != null)
+			{
+				try
+				{
+					input.close();
+				}
+				catch(Exception closeE)
+				{
+					logger.error("failed to close file", closeE);
+				}
+			}
+			
+			if (session != null)
+				session.close();
+		}
+		
+		return true;
 	}
 	
 	private String getRecipe(String options)
@@ -195,32 +241,52 @@ public class RecipeFinder{
 			return;
 		
 		Material ingredient = null;
-		Material item = null;
-		Map<String, Material> items = fridge.getItems();
+		List<Material> items = null;
+		
+		Session session = RecipeFinderServer.getSessionFactory().openSession();
+		
+		FridgeDAO fridgeDAO = new FridgeDAO(session);
+		
+		long current = System.currentTimeMillis();
 		
 		for (int i = 0; i < recipe.getIngredients().size(); i++)
 		{
 			ingredient = recipe.getIngredients().get(i);
 			
-			if (!items.containsKey(ingredient.getItem())) //there is no this ingredient in fridge					
+			items = fridgeDAO.getItemWithSameNameAndUnit(ingredient.getItem(), ingredient.getUnit());
+			
+			if (items == null || items.size() == 0)//there isn't this ingredient in fridge	
 			{
 				recipe.setClosestUseBy(UNAVAILABLE_USEBY);
 				return;
 			}
 			
-			item = items.get(ingredient.getItem());
-			if(item.getAmount() < ingredient.getAmount() //there is not enough ingredient in fridge
-					|| !item.getUnit().equals(ingredient.getUnit())) //the units are not same.
+			int totalAmount = 0;
+			Date closestUseBy = INIT_USEBY;
+			for (Material material : items)
+			{
+				if (material.getUseBy().getTime() < current)
+				{
+					//it is a expired one
+					continue;
+				}
+				
+				if (material.getUseBy().before(closestUseBy))
+				{
+					closestUseBy = material.getUseBy();
+				}
+				
+				totalAmount += material.getAmount();
+			}
+			
+			if(totalAmount < ingredient.getAmount()) //there is not enough ingredient in fridge
 			{
 				recipe.setClosestUseBy(UNAVAILABLE_USEBY);
 				return;
 			}
 			
-			//check the closet useby and set it to recipe's closest
-			if(item.getUseBy().before(recipe.getClosestUseBy()))
-			{
-				recipe.setClosestUseBy(item.getUseBy());
-			}
+			//set closet useby to recipe's closest
+			recipe.setClosestUseBy(closestUseBy);
 		}
 	}
 }

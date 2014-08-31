@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--
+		Document	 : hbm.xml
+		Created on : 24 Aug, 2014, 4:08 PM
+		Author		 : TonyLi
+		Description:
+				Purpose of the document follows.
+-->
+<hibernate-mapping package="com.tonyli.recipefinder.dao.ds">
+	<class name="CommonObject">
+		<id name="uuid">
+			<generator class="assigned"/>
+		</id>
+		
+		<joined-subclass name="Material" table="Material">
+			<key column="uuid"/>
+			<property index="itemIndex" name="item"/>
+			<property index="amountIndex" name="amount"/>
+			<property index="unitIndex" name="unit">
+				<type name="org.hibernate.type.EnumType">
+					<param name="enumClass">
+						com.tonyli.recipefinder.dao.ds.Unit
+					</param>
+				</type>
+			</property>
+			<property index="useByIndex" name="useBy" type="date"/>
+		</joined-subclass>
+	
+		<joined-subclass name="Fridge" table="Fridge">
+			<key column="uuid"/>
+			<bag inverse="false" lazy="false" name="items">
+				<key column="fridgeUuid"/>
+				<one-to-many class="Material"/>
+			</bag>
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

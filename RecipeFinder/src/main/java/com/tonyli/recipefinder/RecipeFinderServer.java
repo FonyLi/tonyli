@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 import org.apache.log4j.Logger;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
 
 /* 
  *	run it as a thread, so user can try several times if they want.
@@ -16,9 +19,20 @@ public class RecipeFinderServer extends Thread{
 	
 	RecipeFinder recipeFinder;
 	
+	private static SessionFactory sessionFactory = null;
+	
+	public static SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+
 	public RecipeFinderServer()
 	{
 		recipeFinder = new RecipeFinder();
+		
+		Configuration conf = new AnnotationConfiguration();
+		//conf.configure("../../../config/hibernate.cfg.xml"); //TODO: why doesn't it work?
+		conf.configure();
+		sessionFactory = conf.buildSessionFactory();
 	}
 	
 	public void run()
@@ -28,7 +42,7 @@ public class RecipeFinderServer extends Thread{
 		System.out.println("This is RecipeFinderServer");
 		System.out.println("you can find recipe as many times as you want");
 		System.out.println("csv and json data files are in data folder");
-		System.out.println("if you want to finish this app, just type \" " + FINISH_SIGN + " \". \n\n");		
+		System.out.println("if you want to finish this app, just type \" " + FINISH_SIGN + " \". \n\n");
 		
 		BufferedReader input = null;
 		
