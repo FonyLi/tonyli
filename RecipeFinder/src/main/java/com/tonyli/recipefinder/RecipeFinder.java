@@ -23,6 +23,7 @@ import com.tonyli.recipefinder.dao.ds.Fridge;
 import com.tonyli.recipefinder.dao.ds.Material;
 import com.tonyli.recipefinder.dao.ds.Recipe;
 import com.tonyli.recipefinder.dao.ds.Unit;
+import com.tonyli.recipefinder.server.ConsoleServer;
 
 /**
  * This class is  main class of the whole project.
@@ -130,7 +131,7 @@ public class RecipeFinder{
 	{		
 		BufferedReader input = null;
 		
-		Session session = RecipeFinderServer.getSessionFactory().openSession();
+		Session session = ConsoleServer.getSessionFactory().openSession();
 		
 		if (session == null)
 			return false;
@@ -243,7 +244,7 @@ public class RecipeFinder{
 		Material ingredient = null;
 		List<Material> items = null;
 		
-		Session session = RecipeFinderServer.getSessionFactory().openSession();
+		Session session = ConsoleServer.getSessionFactory().openSession();
 		
 		FridgeDAO fridgeDAO = new FridgeDAO(session);
 		

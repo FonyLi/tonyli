@@ -132,4 +132,14 @@ public class FridgeDAO extends AbstractDAO{
 		
 		return uuid;
 	}
+	
+	public void deleteItems()
+	{
+		Query query = session.createQuery("delete from Material");
+		query.executeUpdate();
+		session.createQuery("delete from Fridge");
+		query.executeUpdate();
+		session.createQuery("delete from CommonObject");
+		query.executeUpdate();
+	}
 }
