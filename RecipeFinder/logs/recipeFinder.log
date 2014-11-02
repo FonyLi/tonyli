@@ -4958,3 +4958,32 @@ junit.framework.AssertionFailedError: null
 2014-09-02 18:11:38,437 [INFO ] (RecipeFinder.java:71) - request is data/fridge.csv, data/recipe.json
 2014-09-02 18:11:38,546 [INFO ] (RecipeFinder.java:110) - the result is salad sandwich
 2014-09-02 18:11:38,546 [INFO ] (TestRecipeFinder.java:182) - salad sandwich
+2014-09-03 16:03:04,033 [INFO ] (ConsoleServer.java:45) - server starts.
+2014-09-03 16:03:20,056 [INFO ] (RecipeFinder.java:71) - request is data/fridge.csv, data/recipe.json
+2014-09-03 16:03:20,288 [INFO ] (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2014-09-03 16:03:20,300 [INFO ] (Version.java:54) - HHH000412: Hibernate Core {4.3.6.Final}
+2014-09-03 16:03:20,303 [INFO ] (Environment.java:239) - HHH000206: hibernate.properties not found
+2014-09-03 16:03:20,305 [INFO ] (Environment.java:346) - HHH000021: Bytecode provider name : javassist
+2014-09-03 16:03:20,334 [INFO ] (Configuration.java:2073) - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2014-09-03 16:03:20,335 [INFO ] (Configuration.java:2092) - HHH000040: Configuration resource: /hibernate.cfg.xml
+2014-09-03 16:03:20,406 [WARN ] (DTDEntityResolver.java:75) - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2014-09-03 16:03:20,429 [INFO ] (Configuration.java:757) - HHH000221: Reading mappings from resource: hbm.xml
+2014-09-03 16:03:20,475 [WARN ] (DTDEntityResolver.java:75) - HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2014-09-03 16:03:20,530 [INFO ] (Configuration.java:2214) - HHH000041: Configured SessionFactory: null
+2014-09-03 16:03:20,656 [WARN ] (ConnectionProviderInitiator.java:206) - HHH000022: c3p0 properties were encountered, but the c3p0 provider class was not found on the classpath; these properties are going to be ignored.
+2014-09-03 16:03:20,661 [WARN ] (DriverManagerConnectionProviderImpl.java:93) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2014-09-03 16:03:20,672 [INFO ] (DriverManagerConnectionProviderImpl.java:166) - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://192.168.2.2/recipeFinderDB]
+2014-09-03 16:03:20,672 [INFO ] (DriverManagerConnectionProviderImpl.java:175) - HHH000046: Connection properties: {user=rfuser, password=****, autocommit=false}
+2014-09-03 16:03:20,673 [INFO ] (DriverManagerConnectionProviderImpl.java:180) - HHH000006: Autocommit mode: false
+2014-09-03 16:03:20,675 [INFO ] (DriverManagerConnectionProviderImpl.java:102) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2014-09-03 16:03:21,263 [INFO ] (Dialect.java:145) - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2014-09-03 16:03:21,379 [INFO ] (TransactionFactoryInitiator.java:62) - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2014-09-03 16:03:21,385 [INFO ] (ASTQueryTranslatorFactory.java:47) - HHH000397: Using ASTQueryTranslatorFactory
+2014-09-03 16:03:21,732 [INFO ] (SchemaExport.java:343) - HHH000227: Running hbm2ddl schema export
+2014-09-03 16:03:21,846 [INFO ] (SchemaExport.java:405) - HHH000230: Schema export complete
+2014-09-03 16:03:22,077 [WARN ] (HqlSqlWalker.java:996) - [DEPRECATION] Encountered positional parameter near line 1, column 78.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2014-09-03 16:03:22,080 [WARN ] (HqlSqlWalker.java:996) - [DEPRECATION] Encountered positional parameter near line 1, column 99.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2014-09-03 16:03:22,314 [WARN ] (HqlSqlWalker.java:996) - [DEPRECATION] Encountered positional parameter near line 1, column 78.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2014-09-03 16:03:22,315 [WARN ] (HqlSqlWalker.java:996) - [DEPRECATION] Encountered positional parameter near line 1, column 98.  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2014-09-03 16:03:22,346 [INFO ] (RecipeFinder.java:110) - the result is salad sandwich
+2014-11-01 22:30:11,501 [INFO ] (TestRecipeFinder.java:170) - testAddFoodIntoFridge_cheese_earlier's result is 

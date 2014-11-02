@@ -1018,3 +1018,18 @@ a.fen_menu_hover {
     right: 0; 
     z-index:100;
 } 
+
+#dropdown-language {
+	position: absolute;
+	background-color: #1f407e;
+	top: 30px;
+	left: -10px;
+	width: 250px;
+	height: 250px;
+	display: none;
+	z-index: 99;
+	-moz-border-radius-bottomright: 4px;
+	border-bottom-right-radius: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	border-bottom-left-radius: 4px;
+}

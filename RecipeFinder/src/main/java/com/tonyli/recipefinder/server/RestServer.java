@@ -11,7 +11,7 @@ import org.hibernate.cfg.Configuration;
 import com.tonyli.recipefinder.RecipeFinder;
 
 /* 
- *	run it as a thread, so user can try several times if they want.
+ *	run it http server providing http services
  */
 public class RestServer extends Thread{
 	
