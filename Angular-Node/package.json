@@ -1,0 +1,13 @@
+/**
+ * 聊天室设置文件
+ */
+
+{
+	"name": "chat",
+	"version": "0.0.1",
+	"description": "a chat room can support multi person",
+	"dependencies": {
+		"socket.io": "~0.9.6",
+		"mime": "~1.2.7"
+	}
+}
