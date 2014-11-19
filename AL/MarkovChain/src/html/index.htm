@@ -13,23 +13,62 @@
 </head>
 
 <body style="">
+	<div id="top">
+		<p>Hi, this is Tony.</p>
+		<p>I'm telling you a secret.</p>
+		<p>Guess what. You will become a famous POET!</p>
+		<p>How? Easy! Each one of these two ways below can work well for you (only the one choice will work)</p>
+		<p>You can easily:</p>
+		<p>Either -- OptionA: select you poem teacher</p>
+		<select>
+			<option value="selectOne">select one famous poet please</option>
+			<option value="Shakespeare">William Shakespeare</option>
+			<option value="Pushkin">Aleksandr Pushkin</option>
+			<option value="Tagore">Rabindranath Tagore</option>
+			<option value="Whitman">Walt Whitman</option>
+		</select>
+		
+		<p>Or -- OptionB: upload a txt file of your poem words set. </p>		
+		
+		<div class="file-box">
+			<form action="" method="post" enctype="multipart/form-data">
+				<input type='text' name='textfield' id='textfield' class='txt' />  
+				<input type="file" name="fileField" class="file" id="fileField" size="28" onchange="document.getElementById('textfield').value=this.value" />
+				<input type="submit" name="submit" class="btn" value="upload" />
+			</form>
+		</div>
+		
+		<br /><br />
+		<form>
+		
+			OK, then input the beginning 
+			<input type="text" name="beginning" />
+			 and the end 
+			<input type="text" name="end" /> of your poem</h2>
+		</form>
+		
+		<br /><br />
+		
+		<p>Now, close your eyes, hold your breath, let's repeat this sentence silently. "I'm a famous POET. I'm a famous POET. I'm a famous POET."</p>
+		
+		<p>Then, open eyes and click this button</p>
+		
+		<button>write a poem!</button>
+		
+		<p>Here is your masterpiece. Well done! You become a famous poet now! </p>
+		
+		<div class="poem_layout">
+
+		</div>
 	
+	</div>
 	
-	<h1>You will become a famous POET!</h1>
-	<h2>How? Two ways:</h2>
-	<h2>You can:</h2>
-	<h2>Either: select you poem teacher</h2>
-	
-	<h2>Or: upload a txt file of your poem words set. </h2>
-	<h2>OK, input the beginning ____and the end___ of your poem</h2>
-	
-	<button>write a new poem</button>
-	
-	<h2>Here is your masterpiece. Well done! You are a famous poet now! </h2>
-	<div>
-		<h1>Hi, this it Tony.</h1>
-		<h1>It is the assignment of Markov Chain Algorithm<h1>
-		<h1>You can see source code here: </h1>
+	<div id="bottom">
+		<p>Hi, this is Tony.</p>
+		<p>It is the assignment of Markov Chain Algorithm<p>
+		<p>You can see source code here: 
+			<a href="https://github.com/FonyLi/tonyli/tree/master/AL/MarkovChain">Tony's Github</a>
+		</p>
 	</div>
 
 </body>
