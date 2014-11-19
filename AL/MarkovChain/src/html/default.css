@@ -1,1 +1,1 @@
-.poem_layout {margin: 1 1 1 1;  height: 500px;   min-width:300px;  max-width:400px;  border:1px solid black; background:#F0F0F0 }
+.poem_layout {margin: 1 1 1 1;  height: 500px;   min-width:300px;  max-width:400px;  border:1px solid black; background:#F0F0F0; overflow:scroll;}

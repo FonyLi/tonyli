@@ -57,7 +57,7 @@ public class Chain {
 			//if there is a punctuation, end this line			
 			lastCharIndex = current.length() - 1;
 			if(current.charAt(lastCharIndex) >= '!' && current.charAt(lastCharIndex) <= '?')
-				sb.append("\n");
+				sb.append("<br />");
 			else
 				sb.append(" ");
 			

@@ -15,10 +15,30 @@ public class MarkovChain {
 	
 	private Chain chain = new Chain();
 	
+	public static final String SHAKESPEARE = "William Shakespeare";
+	public static final String PUSHKIN = "Aleksandr Pushkin";
+	public static final String TAGORE = "Rabindranath Tagore";
+	public static final String WHITMAN = "Walt Whitman";
+	
+	private static final String SHAKESPEARE_POEMS = "data/shakespeare.txt";
+	private static final String PUSHKIN_POEMS = "data/pushkin.txt";
+	private static final String TAGORE_POEMS = "data/tagore.txt";
+	private static final String WHITMAN_POEMS = "data/whitman.txt";
+	
 	static
 	{
 		//load log4j config
 		PropertyConfigurator.configure("config/log4j.properties");
+	}
+	
+	private static MarkovChain instance = new MarkovChain();
+	
+	public static synchronized MarkovChain getInstance()
+	{
+		if(instance == null)
+			instance = new MarkovChain();
+		
+		return instance;
 	}
 	
 	public void clearChain()
@@ -26,8 +46,10 @@ public class MarkovChain {
 		chain.clearChain();
 	}
 	
-	public String transform(File file, String prefix, String suffix)
+	public void uploadFile(File file)
 	{
+		chain.clearChain();
+		
 		try
 		{
 			StreamTokenizer	st = new StreamTokenizer(new BufferedReader(new FileReader(file)));
@@ -52,7 +74,6 @@ public class MarkovChain {
 				
 				previous = current;
 				current = next;
-
 				
 				next = st.sval.toLowerCase();
 				
@@ -64,15 +85,51 @@ public class MarkovChain {
 				chain.add(previous, current, next);	
 			}
 			
-			//chain.dumpRules();
-			return chain.generate(prefix, suffix);
 		}
 		catch(Exception e)
 		{
 			LOGGER.error("", e);
+		}		
+	}
+	
+	public String makePoem(String prefix, String suffix)
+	{
+		return chain.generate(prefix, suffix);
+	}
+	
+	public String transform(File file, String prefix, String suffix)
+	{
+		uploadFile(file);
+		return makePoem(prefix, suffix);
+	}
+	
+	public void selectTeacher(String teacherName)
+	{
+		String poemWordsFileName = null;
+		//TODO:
+		//we make use a list to store all preloaded teachers.
+		//but for current version. we just load them as new ones each time.
+		switch(teacherName)
+		{
+		case SHAKESPEARE:
+			poemWordsFileName = SHAKESPEARE_POEMS;
+			break;
+		case PUSHKIN:
+			poemWordsFileName = PUSHKIN_POEMS;
+			break;
+		case TAGORE:
+			poemWordsFileName = TAGORE_POEMS;
+			break;
+		case WHITMAN:
+			poemWordsFileName = WHITMAN_POEMS;
+			break;
+		default:
+			poemWordsFileName = SHAKESPEARE_POEMS;
+
 		}
 		
-		return null;
+		uploadFile(new File(poemWordsFileName));
+		
 	}
 	
 	public static void main(String[] argv)
