@@ -17,8 +17,16 @@ public class Chain {
 		chain.clear();
 	}
 	
+	/**
+	 * generate a poem stat with begin and end with end.
+	 * if the whole length is larger than MAX_OUTPUT, just stop and return.
+	 * @param begin
+	 * @param end
+	 * @return
+	 */
 	public String generate(String begin, String end)
 	{
+		//check input para's availability
 		if(begin == null)
 			return null;
 		
@@ -32,7 +40,10 @@ public class Chain {
 		if(begin.equalsIgnoreCase(end))
 			return begin;
 		
+		//set the previous and current
 		String previous = begin;
+		
+		//for the first word, get the next
 		String current = getNext(previous);
 		
 		if(current == null)
@@ -44,6 +55,7 @@ public class Chain {
 		
 		int lastCharIndex = -1;
 		
+		//for the rest, get the next of "previous current" randomly.
 		while(current != null && !current.equalsIgnoreCase(end) && wordCount < MAX_OUTPUT)
 		{
 			previous = current;
@@ -54,7 +66,7 @@ public class Chain {
 			sb.append(current);
 			
 			//deal with punctuation specially
-			//if there is a punctuation, end this line			
+			//if there is a punctuation, end this line
 			lastCharIndex = current.length() - 1;
 			if(current.charAt(lastCharIndex) >= '!' && current.charAt(lastCharIndex) <= '?')
 				sb.append("<br />");
@@ -67,6 +79,11 @@ public class Chain {
 		return sb.toString();
 	}
 	
+	/**
+	 * get next of current or "previous current"
+	 * @param current
+	 * @return
+	 */
 	private String getNext(String current)
 	{
 		if(!chain.containsKey(current))
@@ -82,6 +99,10 @@ public class Chain {
 		return (String)(nextArray[(int)(Math.random() * nextArray.length)]); //get one from nextArray randomly
 	}
 	
+	/**
+	 * for internal debug use.
+	 * dump all the mapping rules of getting the next.
+	 */
 	public void dumpRules()
 	{
 		if(chain == null)
@@ -105,6 +126,14 @@ public class Chain {
 		}
 	}
 	
+	/**
+	 * The function des two things.
+	 * 1 add next to current's next set.
+	 * 2 add next to "previous current"'s next set if previous is not null
+	 * @param previous
+	 * @param current
+	 * @param next
+	 */
 	public void add(String previous, String current, String next)
 	{
 		//assume the input is "aaa bbb ccc aaa ddd"

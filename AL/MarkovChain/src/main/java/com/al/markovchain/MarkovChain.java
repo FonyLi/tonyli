@@ -46,7 +46,11 @@ public class MarkovChain {
 		chain.clearChain();
 	}
 	
-	public void uploadFile(File file)
+	/**
+	 * upload a file from local disk to create the "next" work set.
+	 * @param file
+	 */
+	private void uploadFile(File file)
 	{
 		chain.clearChain();
 		
@@ -92,17 +96,33 @@ public class MarkovChain {
 		}		
 	}
 	
+	/**
+	 * @param prefix
+	 * @param suffix
+	 * @return
+	 */
 	public String makePoem(String prefix, String suffix)
 	{
 		return chain.generate(prefix, suffix);
 	}
 	
+	/**
+	 * the whole process of uploading file and making poem.
+	 * @param file
+	 * @param prefix
+	 * @param suffix
+	 * @return
+	 */
 	public String transform(File file, String prefix, String suffix)
 	{
 		uploadFile(file);
 		return makePoem(prefix, suffix);
 	}
 	
+	/**
+	 * upload a file from local disk according to the teacher's name user assigned.
+	 * @param teacherName
+	 */
 	public void selectTeacher(String teacherName)
 	{
 		String poemWordsFileName = null;
@@ -128,13 +148,24 @@ public class MarkovChain {
 
 		}
 		
-		uploadFile(new File(poemWordsFileName));
-		
+		uploadFile(new File(poemWordsFileName));		
 	}
 	
+	/**
+	 * for test
+	 */
+	public void dump()
+	{
+		if(chain != null)
+			chain.dumpRules();
+	}
+	
+	/**
+	 * for tests
+	 * @param argv
+	 */
 	public static void main(String[] argv)
 	{
-		
 		MarkovChain markovChain = new MarkovChain();
 		
 		File file = new File("data/words.txt");

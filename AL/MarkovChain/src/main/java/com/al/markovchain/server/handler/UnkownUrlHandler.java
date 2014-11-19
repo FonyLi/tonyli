@@ -4,9 +4,8 @@ import org.apache.log4j.Logger;
 import org.glassfish.grizzly.http.server.Request;
 import org.glassfish.grizzly.http.server.Response;
 
-import com.al.markovchain.server.AbstractHandler;
-import com.al.markovchain.server.MetaData;
-import com.al.markovchain.server.StringResponse;
+import com.al.markovchain.server.ds.MetaData;
+import com.al.markovchain.server.ds.StringResponse;
 import com.google.gson.Gson;
 public class UnkownUrlHandler extends AbstractHandler {
 

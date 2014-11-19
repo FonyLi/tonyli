@@ -5,9 +5,8 @@ import org.glassfish.grizzly.http.server.Request;
 import org.glassfish.grizzly.http.server.Response;
 
 import com.al.markovchain.MarkovChain;
-import com.al.markovchain.server.AbstractHandler;
-import com.al.markovchain.server.MetaData;
-import com.al.markovchain.server.response.CommonResponse;
+import com.al.markovchain.server.ds.CommonResponse;
+import com.al.markovchain.server.ds.MetaData;
 import com.google.gson.Gson;
 
 /**
