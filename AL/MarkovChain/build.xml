@@ -5,8 +5,9 @@
 	<property name="lib" value="libs"/>
 	<property name="config" value="config"/>
 	<property name="data" value="data"/>
-	<property name="jar_name" value="${dest}\markovchain.jar"/>
-	<property name="zip_name" value="${dest}\markovchain.zip"/>
+	<property name="html" value="html"/>
+	<property name="jar_name" value="${dest}\markov-chain.jar"/>
+	<property name="zip_name" value="${dest}\markov-chain.zip"/>
 	<property name="temp" value="temp\RecipeFinder"/>
 	
 	<path id="libs">  
@@ -26,7 +27,7 @@
 	</target>
 	
 	<target name="compile" depends="init">
-		<javac target="1.6" srcdir="${src}" destdir="${dest}" debug="true">
+		<javac target="1.7" srcdir="${src}" destdir="${dest}" debug="true">
 			<compilerarg line="-encoding UTF-8"/>  
 			<classpath refid="libs"/>
 		</javac>
@@ -59,8 +60,13 @@
 		
 		<copy todir="${temp}/${data}">
 			<fileset dir="${data}">
-				<include name="*.csv" />
-				<include name="*.json" />
+				<include name="*.txt" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${temp}/${html}">
+			<fileset dir="${html}">
+				<include name="*.*" />
 			</fileset>
 		</copy>
 		

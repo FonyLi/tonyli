@@ -20,7 +20,7 @@ public class MainService {
 	
 	
 	public static void main(String[] args) throws Exception{
-		final HttpServer server = HttpServer.createSimpleServer("/", 1234);
+		final HttpServer server = HttpServer.createSimpleServer("/", 80);
 		
 		//init MarkovChain using Shakespeare words set.
 		MarkovChain.getInstance().selectTeacher(MarkovChain.SHAKESPEARE);
@@ -28,7 +28,7 @@ public class MainService {
 		addHttpHandlers(server);
 		
 		//serve static assets
-	    StaticHttpHandler staticHttpHandler = new StaticHttpHandler("src/html");
+	    StaticHttpHandler staticHttpHandler = new StaticHttpHandler("html");
 	    server.getServerConfiguration().addHttpHandler(staticHttpHandler, "/");
 		
 		start(server);

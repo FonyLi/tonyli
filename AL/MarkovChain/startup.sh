@@ -7,6 +7,6 @@ done
 
 export CLASSPATH=.:$CLASSPATH
 echo ${CLASSPATH}
-java -Xms50m -Xmx250m com.al.markovchain.MarkovChain
+java -Xms50m -Xmx250m com.al.markovchain.server.MainService
 
 
