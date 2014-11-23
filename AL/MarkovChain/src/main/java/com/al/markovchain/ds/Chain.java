@@ -61,6 +61,9 @@ public class Chain {
 			previous = current;
 			current = getNext(preAndCurrent);
 			
+			if(current == null)
+				break;
+			
 			preAndCurrent = previous + " " + current;
 
 			sb.append(current);
