@@ -2,89 +2,151 @@
 <!-- saved from url=(0022)http://www.ausrich.com/ -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>TonyLi Markov Chain</title>
 	<meta name="description" content="TonyL, Markov, Chain, AL, interview">
 
 	<link href="./default.css" rel="stylesheet" media="screen">
 
 	<script src="./jquery-1.11.1.js"></script>
+	<script src="./ajaxfileupload.js"></script>
+	
+	<script>
+		function selectTeacher() {
+			$.ajax({
+				type: "Get",
+				url: "markov-chain/api/v1/selectTeacher",
+				data: "teacher=" + $("#teacher-selector").val(),
+	  
+				dataType: "json",
+				
+				success: function (response) {	
+				},
+				
+				error: function (html) {					
+					alert("html is " + html);
+					alert("System error");
+				}
+			});
+		}
+		
+		function writePoem() {			
+			$.ajax({
+				type: "Get",
+				url: "markov-chain/api/v1/writePoem",
+				data: "begin=" + $("#begin").val() + "&end=" + $("#end").val(),
+	  
+				dataType: "json",
+				
+				success: function (response) {						
+					var json = eval(response);
+					$("#poem_p").empty();
+					$("#poem_p").html(json["data"]);  	
+				},
+				
+				error: function (html) {
+				
+					alert("html is " + html);
+					alert("System error");
+				}
+			});
+		}
+		
+		function fileUpload()
+		{
+			//starting setting some animation when the ajax starts and completes
+			$("#loading")
+			.ajaxStart(function(){
+				$(this).show();
+			})
+			.ajaxComplete(function(){
+				$(this).hide();
+			});
+
+			$.ajaxFileUpload
+			(
+				{
+					url:'markov-chain/api/v1/uploadFile', 
+					secureuri:false,
+					fileElementId:'fileName',
+					dataType: 'json',
+					success: function (data, status)
+					{
+						if(typeof(data.error) != 'undefined')
+						{
+							if(data.error != '')
+							{
+								alert(data.error);
+							}else
+							{
+								alert(data.msg);
+							}
+						}
+					},
+					error: function (data, status, e)
+					{
+						alert(e);
+					}
+				}
+			)
+			
+			return false;
+		}
+	</script>
 </head>
 
 <body style="">
 	<div id="top">
+		</br>
+		</br>
 		<p>Hi, this is Tony.</p>
 		<p>I'm telling you a secret.</p>
 		<p>Guess what. You will become a famous POET!</p>
-		<p>How? Simple! Only two steps.</p>
+		<p>How? Simple! Only three steps.(step 1 and 2 are optional)</p>
 		
-		<p>Step1: Select you poem teacher</p>
-		<select id="teacher-selector" onselect="selectTeacher()">
-			<option value="selectOne">select one famous poet please</option>
-			<option value="Shakespeare">William Shakespeare</option>
-			<option value="Pushkin">Aleksandr Pushkin</option>
-			<option value="Tagore">Rabindranath Tagore</option>
-			<option value="Whitman">Walt Whitman</option>
-		</select>
-		
-		<br /><br />
-		
-		<script type="text/javascript">
-			function WritePoem() {
+		</br>
+		<form id="upload_file_form" method="post" enctype="multipart/form-data">
+			Step1: Upload word set file 
+			<input type="text" name="description"/>
+			<input type="file" id="fileName" name="fileName"/>
+			<button type="button" onclick="fileUpload()">submit</button>
+			(Optional. we have default word set, and Shakespeare is the default teacher.)
+		</form>
 
-				$.ajax({
-					type: "Get",
-					url: "markov-chain/api/v1/selectTeacher",
-					data: "teacher=" + $("#teacher-selector").val(),
-          
-					dataType: "json",
-					
-					success: function (response) {	
-					},
-					
-					error: function (html) {					
-						alert("html is " + html);
-						alert("System error");
-					}
-				});
-				
-				$.ajax({
-					type: "Get",
-					url: "markov-chain/api/v1/writePoem",
-					data: "begin=" + $("#begin").val() + "&end=" + $("#end").val(),
-          
-					dataType: "json",
-					
-					success: function (response) {						
-						var json = eval(response);
-						$("#poem_p").empty();
-						$("#poem_p").html(json["data"]);  	
-					},
-					
-					error: function (html) {
-					
-						alert("html is " + html);
-						alert("System error");
-					}
-				});
-			}
-		</script>
-		
-		<form id="rangeForm" >
-			Step2: Input the beginning
-			<input type="text" id="begin"/>
-			 and the end 
-			<input type="text" id="end" /> of your poem</h2>
-			
-			<br /><br />
-		
-			<p>Now, close your eyes, hold your breath, let's repeat this sentence silently. "I'm a famous POET. I'm a famous POET. I'm a famous POET."</p>
-			
-			<p>Then, open eyes and click this button</p>
+		</br>
+		<form id="select_teaher_form" method="post" enctype="multipart/form-data">
+			Step2: Select you poem teacher 
+			<select id="teacher-selector">				
+				<option value="selectOne">select one famous poet please</option>
+				<option value="William Shakespeare">William Shakespeare</option>
+				<option value="Aleksandr Pushkin">Aleksandr Pushkin</option>
+				<option value="Rabindranath Tagore">Rabindranath Tagore</option>
+				<option value="Walt Whitman">Walt Whitman</option>
+			</select>
+			<button type="button" onclick="selectTeacher()">selectTeacher</button>
+			(Optional. Do NOT make any choice if you want to use your own word set file uploaded in the first step)
 		</form>
 		
-		<button type="button" onclick="WritePoem()">write a poem!"</button> 
-		<p>(You can click this button many times, a whole poem will be written each time)</p>
+		</br>
+		<form id="rangeForm" >
+			Step3: Input the beginning
+			<input type="text" id="begin"/>
+			 and the end 
+			<input type="text" id="end" /> of your poem.			
+			
+		</form>
+
+		</br></br>
+		
+		<p>
+			Now, close your eyes, hold your breath, let's repeat this sentence silently. "I'm a famous POET. I'm a famous POET. I'm a famous POET."			
+			</br>Then, open eyes and click this button
+			<button type="button" onclick="writePoem()">write a poem!</button> 
+		</p>
+			
+		</br>
+		<p>(You can click this button many times, a whole new poem will be written each time)</p>
 		
 		<p>Here is your masterpiece. Well done! You become a famous poet now! </p>
 		

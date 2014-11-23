@@ -7,11 +7,11 @@
 	<classpathentry kind="lib" path="libs/junit-4.8.1.jar"/>
 	<classpathentry kind="lib" path="libs/log4j-1.2.14.jar"/>
 	<classpathentry kind="lib" path="libs/commons-lang3-3.1-sources.jar"/>
-	<classpathentry kind="lib" path="libs/grizzly-http-2.1.7.jar"/>
-	<classpathentry kind="lib" path="libs/grizzly-http-server-2.1.7.jar"/>
-	<classpathentry kind="lib" path="libs/grizzly-framework-2.1.7.jar"/>
-	<classpathentry kind="lib" path="libs/grizzly-rcm-2.1.7.jar"/>
 	<classpathentry kind="lib" path="libs/gson-2.0.jar"/>
+	<classpathentry kind="lib" path="libs/grizzly-http-server-multipart-2.3.14.jar" sourcepath="D:/develop/code/github/tonyli/AL/MarkovChain/libs/grizzly-http-server-multipart-2.3.14-sources.jar"/>
 	<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
+	<classpathentry kind="lib" path="libs/grizzly-framework-2.3.14.jar"/>
+	<classpathentry kind="lib" path="libs/grizzly-http-2.3.14.jar" sourcepath="D:/develop/code/github/tonyli/AL/MarkovChain/libs/grizzly-http-2.3.14-sources.jar"/>
+	<classpathentry kind="lib" path="libs/grizzly-http-server-2.3.14.jar" sourcepath="D:/develop/code/github/tonyli/AL/MarkovChain/libs/grizzly-http-server-2.3.14-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

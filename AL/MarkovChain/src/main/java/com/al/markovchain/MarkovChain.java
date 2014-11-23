@@ -50,7 +50,7 @@ public class MarkovChain {
 	 * upload a file from local disk to create the "next" work set.
 	 * @param file
 	 */
-	private void uploadFile(File file)
+	public void uploadFile(File file)
 	{
 		chain.clearChain();
 		

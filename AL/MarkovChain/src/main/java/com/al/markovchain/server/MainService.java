@@ -16,8 +16,7 @@ import com.al.markovchain.server.ds.HttpHandlerConstants;
  */
 public class MainService {
 	
-	private static Logger logger = Logger.getLogger(MainService.class);
-	
+	private static Logger logger = Logger.getLogger(MainService.class);	
 	
 	public static void main(String[] args) throws Exception{
 		final HttpServer server = HttpServer.createSimpleServer("/", 80);

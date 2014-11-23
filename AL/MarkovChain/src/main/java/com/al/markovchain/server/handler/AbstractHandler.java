@@ -1,10 +1,10 @@
 package com.al.markovchain.server.handler;
 
 import org.apache.log4j.Logger;
+import org.glassfish.grizzly.http.io.NIOWriter;
 import org.glassfish.grizzly.http.server.HttpHandler;
 import org.glassfish.grizzly.http.server.Request;
 import org.glassfish.grizzly.http.server.Response;
-import org.glassfish.grizzly.http.server.io.NIOWriter;
 
 import com.al.markovchain.server.ds.HttpHandlerConstants;
 
@@ -50,10 +50,8 @@ public abstract class AbstractHandler extends HttpHandler implements
 			
 			resp.setContentType("text/html;charset=utf-8");
 			
-			NIOWriter out = resp.getWriter();
+			NIOWriter out = resp.getNIOWriter();
 			out.write(result);
-		    
-		    
 		} catch (Exception e) {
 			e.printStackTrace();
 			logger.error(e.toString());
