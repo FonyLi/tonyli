@@ -19,7 +19,8 @@ public class MainService {
 	private static Logger logger = Logger.getLogger(MainService.class);	
 	
 	public static void main(String[] args) throws Exception{
-		final HttpServer server = HttpServer.createSimpleServer("/", 80);
+		
+		final HttpServer server = HttpServer.createSimpleServer("html", 80);
 		
 		//init MarkovChain using Shakespeare words set.
 		MarkovChain.getInstance().selectTeacher(MarkovChain.SHAKESPEARE);
@@ -28,7 +29,7 @@ public class MainService {
 		
 		//serve static assets
 	    StaticHttpHandler staticHttpHandler = new StaticHttpHandler("html");
-	    server.getServerConfiguration().addHttpHandler(staticHttpHandler, "/");
+	    server.getServerConfiguration().addHttpHandler(staticHttpHandler, "/fdsfdsfds/");
 		
 		start(server);
 	}

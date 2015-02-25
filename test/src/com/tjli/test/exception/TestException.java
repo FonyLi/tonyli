@@ -21,7 +21,36 @@ public class TestException {
 	{
 		
 		TestException test = new TestException();
-		System.out.println(test.method3());
+//		System.out.println(test.method3());
+		
+		System.out.print(test.m1());
+	}
+	
+	private String m1()
+	{
+		try
+		{
+			System.out.print("A");
+			int a = 1 / 0;
+			
+			return "D";
+		}
+		catch(Exception e)
+		{
+			System.out.print("B");
+			
+			return m2() + "Z";
+		}
+		finally
+		{
+			System.out.print("C");
+		}
+	}
+	
+	private String m2()
+	{
+		System.out.print("X");
+		return "Y";
 	}
 	
 	private int method2()

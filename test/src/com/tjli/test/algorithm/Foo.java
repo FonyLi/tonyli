@@ -8,6 +8,15 @@ import java.util.Set;
 
 public class Foo
 {
+	public final String s;
+	public Foo()
+	{
+		this(3);
+	}
+	public Foo(int a)
+	{
+		s = "";
+	}
     public static synchronized void bar()
     {
     	System.out.println("hehe");

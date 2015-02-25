@@ -19,7 +19,7 @@ public class FatherClass extends GrandFatherClass{
 
 	public static void main(String[] args) {
 		FatherClass cc = new ChildClass();
-		//cc.canUse();
+		cc.canUse();
 	}
 	
 	public static void method(int a)

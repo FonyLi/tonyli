@@ -25,7 +25,8 @@ var server = http.createServer(function (req, res) {
 	var pathName = url.parse(req.url).pathname;
 	if(pathName.slice(-1) === "/"){
         pathName = pathName + "index.html";   //默认取当前默认下的index.html
-    }
+   }
+    
 	// 安全处理（当使用Linux 的 curl命令访问时，存在安全隐患）
 	var realPath = path.join("client", path.normalize(pathName.replace(/\.\./g, "")));
 	// 检查文件路径是否存在
