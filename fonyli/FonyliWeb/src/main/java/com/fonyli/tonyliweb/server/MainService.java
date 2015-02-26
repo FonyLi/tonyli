@@ -26,11 +26,7 @@ public class MainService {
 		MarkovChain.getInstance().selectTeacher(MarkovChain.SHAKESPEARE);
 		
 		addHttpHandlers(server);
-		
-		//serve static assets
-	    StaticHttpHandler staticHttpHandler = new StaticHttpHandler("html");
-	    server.getServerConfiguration().addHttpHandler(staticHttpHandler, "/fdsfdsfds/");
-		
+	    
 		start(server);
 	}
 

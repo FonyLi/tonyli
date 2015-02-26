@@ -380,7 +380,7 @@ h3, h4, h5, h6 {
 }
 
 /* *********SPRITES************************************************ */
-.ico-career, .ico-projects, .ico-algorithms, .ico-skills, .ico-education, .ico-hobbies{
+.ico-career, .ico-projects, .ico-algorithms, .ico-skills, .ico-ideas, .ico-hobbies{
 	background-image: url(../images/sprites.png); background-color: transparent; background-repeat: no-repeat; 
 }
 .ico-career:hover { width: 24px; height: 24px; background-position: -78px -48px; }
@@ -395,8 +395,8 @@ h3, h4, h5, h6 {
 .ico-skills:hover { width: 24px; height: 24px; background-position: -28px -46px; }
 .ico-skills { width: 24px; height: 24px; background-position: 0 -25px; }
 
-.ico-education:hover { width: 27px; height: 22px; background-position: 0 -50px; }
-.ico-education { width: 27px; height: 22px; background-position: -103px -50px; }
+.ico-ideas:hover { width: 22px; height: 24px; background-position: -107px 0; }
+.ico-ideas { width: 22px; height: 24px; background-position: -107px -25px; }
 
 .ico-hobbies:hover { width: 35px; height: 22px; background-position: -25px -23px; }
 .ico-hobbies { width: 35px; height: 22px; background-position: -25px 0; }

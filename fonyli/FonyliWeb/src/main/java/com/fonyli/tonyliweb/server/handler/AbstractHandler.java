@@ -16,6 +16,24 @@ public abstract class AbstractHandler extends HttpHandler implements
 	public abstract String doService(Request req, Response resp)
 			throws Exception;
 
+	public String getRelativeURI(final Request request) {
+        String uri = request.getRequestURI();
+        if (uri.contains("..")) {
+            return null;
+        }
+
+        final String resourcesContextPath = request.getContextPath();
+        if (resourcesContextPath != null && !resourcesContextPath.isEmpty()) {
+            if (!uri.startsWith(resourcesContextPath)) {
+                return null;
+            }
+
+            uri = uri.substring(resourcesContextPath.length());
+        }
+
+        return uri;
+    }
+	
 	@Override
 	public void service(Request req, Response resp) throws Exception {
 
