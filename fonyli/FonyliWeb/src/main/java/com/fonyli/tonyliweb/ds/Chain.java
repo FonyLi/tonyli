@@ -55,6 +55,8 @@ public class Chain {
 		
 		int lastCharIndex = -1;
 		
+		boolean isFinish = false;
+		
 		//for the rest, get the next of "previous current" randomly.
 		while(current != null && !current.equalsIgnoreCase(end) && wordCount < MAX_OUTPUT)
 		{
@@ -68,6 +70,13 @@ public class Chain {
 
 			sb.append(current);
 			
+			if(current.equals(end))
+			{
+				isFinish = true;
+				break;
+			}
+			
+			
 			//deal with punctuation specially
 			//if there is a punctuation, end this line
 			lastCharIndex = current.length() - 1;
@@ -78,6 +87,9 @@ public class Chain {
 			
 			wordCount++;
 		}
+		
+		if(!isFinish)
+			sb.append(end);
 				
 		return sb.toString();
 	}
@@ -161,7 +173,7 @@ public class Chain {
 		{
 			String preAndCurrent = previous + " " + current;
 			
-			addOneWord(preAndCurrent, next);			
+			addOneWord(preAndCurrent, next);
 		}
 	}
 	

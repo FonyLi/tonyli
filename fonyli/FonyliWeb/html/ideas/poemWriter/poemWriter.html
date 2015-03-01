@@ -99,24 +99,42 @@
 <body style="">
 	<div id="top">
 		</br>
-		</br>
-		<p>Hi, this is Tony.</p>
-		<p>I'm telling you a secret.</p>
-		<p>Guess what. You will become a famous POET!</p>
-		<p>How? Simple! Only three steps.(step 1 and 2 are optional)</p>
+		<h3>Poem Writer for fun</h3>
+		<p>It is an interesting tool to generate some poems according to the start word and end word you assign</p>
+		<p>The default word set is Hamlet from shakespeare</p>
 		
-		</br>
-		<form id="upload_file_form" method="post" enctype="multipart/form-data">
-			Step1: Upload word set file 
-			<input type="text" name="description"/>
-			<input type="file" id="fileName" name="fileName"/>
-			<button type="button" onclick="fileUpload()">submit</button>
-			(Optional. we have default word set, and Shakespeare is the default teacher.)
+		<form id="rangeForm" >
+			Input the beginning
+			<input type="text" id="begin" value="you"/>
+			 and the end 
+			<input type="text" id="end" value="me"/> of your poem.			
 		</form>
+		
+		<p>
+			<button type="button" onclick="writePoem()">Write a Poem!</button> 
+		</p>
+
+		<p>(You can click this button many times, a whole new poem will be written each time)</p>
+		
+		<p>Here is your masterpiece. Well done! You become a famous poet now! </p>
+		
+		<div class="poem_layout" id="poem_layout_id">
+			<p id="poem_p" class="poem_content"></p>
+		</div>
 
 		</br>
+		
+		<h4>Extra Optional Function 1</h4>
+		<form id="upload_file_form" method="post" enctype="multipart/form-data">
+			You can also Upload a word set file (.txt)
+			<input type="text" name="description"/>
+			<input type="file" id="fileName" name="fileName"/>
+			<button type="button" onclick="fileUpload()">Upload</button>
+		</form>
+
+		<h4>Extra Optional Function 2</h4>
 		<form id="select_teaher_form" method="post" enctype="multipart/form-data">
-			Step2: Select you poem teacher 
+			Select you poem teacher 
 			<select id="teacher-selector">				
 				<option value="selectOne">select one famous poet please</option>
 				<option value="William Shakespeare">William Shakespeare</option>
@@ -125,35 +143,8 @@
 				<option value="Walt Whitman">Walt Whitman</option>
 			</select>
 			<button type="button" onclick="selectTeacher()">selectTeacher</button>
-			(Optional. Do NOT make any choice if you want to use your own word set file uploaded in the first step)
-		</form>
-		
-		</br>
-		<form id="rangeForm" >
-			Step3: Input the beginning
-			<input type="text" id="begin"/>
-			 and the end 
-			<input type="text" id="end" /> of your poem.			
-			
-		</form>
-
-		</br></br>
-		
-		<p>
-			Now, close your eyes, hold your breath, let's repeat this sentence silently. "I'm a famous POET. I'm a famous POET. I'm a famous POET."			
-			</br>Then, open eyes and click this button
-			<button type="button" onclick="writePoem()">write a poem!</button> 
-		</p>
-			
-		</br>
-		<p>(You can click this button many times, a whole new poem will be written each time)</p>
-		
-		<p>Here is your masterpiece. Well done! You become a famous poet now! </p>
-		
-		<div class="poem_layout" id="poem_layout_id">
-			<p id="poem_p"></p>
-		</div>
-	
+			(Notice, Do NOT make any choice if you want to use your own word set file uploaded in the first step)
+		</form>	
 	</div>
 	
 	<div id="bottom">

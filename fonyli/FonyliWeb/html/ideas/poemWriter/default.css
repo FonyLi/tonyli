@@ -1,9 +1,11 @@
 
 body {
-  background: #252525;
-  color: #fff;
+  /*background: #252525;
+  color: #fff;*/
   font: 12px/12px "Museo Sans 300", "Verdana", "Geneva", "Arial", "Helvetica", "sans-serif";
   min-width: 960px;
 }
 
-.poem_layout {margin: 1 1 1 1;  height: 500px;   min-width:300px;  max-width:400px;  border:1px solid black; background:#555555; overflow:scroll;}
+.poem_layout {margin: 1 1 1 1;  height: 500px;   min-width:500px;  max-width:800px;  border:1px solid black; background:#555555; overflow:scroll;}
+
+.poem_content {color: #fff;}

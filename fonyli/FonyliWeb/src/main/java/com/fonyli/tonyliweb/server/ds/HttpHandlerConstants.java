@@ -20,7 +20,6 @@ public interface HttpHandlerConstants {
 	public final Class  HANDLER_API_UNKOWN = UnkownUrlHandler.class;
 	public final String			API_UNKOWN ="/ideas/poemWriter/markov-chain/api/v1/unkown";
 	
-	
 	public final Class HANDLER_API_SELECT_TEACHER = SelectTeacherHandler.class;
 	public final String		   API_SELECT_TEACHER = "/markov-chain/api/v1/selectTeacher";
 	

@@ -18,7 +18,7 @@ public class StaticHtmlHandler extends StaticHttpHandler {
             final Request request,
             final Response response) throws Exception {
 		
-		LOGGER.info(uri);
+		LOGGER.debug(uri);
 		return super.handle(uri, request, response);
 	}
 }

@@ -5,6 +5,16 @@ border-radius: 40px;
 border-radius: 80px;
 }
 
+.travel img{ 
+height: 256px;
+border:2px solid transparent; 
+}
+
+.travel img:hover{
+opacity: 0.9;
+border:2px solid red;
+}
+
 .dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
     background-color: rgb(250, 0, 0);
 	background-image: linear-gradient(to bottom, rgb(102, 153, 255), rgb(62, 123, 230));
@@ -380,7 +390,7 @@ h3, h4, h5, h6 {
 }
 
 /* *********SPRITES************************************************ */
-.ico-career, .ico-projects, .ico-algorithms, .ico-skills, .ico-ideas, .ico-hobbies{
+.ico-career, .ico-projects, .ico-algorithms, .ico-skills, .ico-ideas, .ico-travel{
 	background-image: url(../images/sprites.png); background-color: transparent; background-repeat: no-repeat; 
 }
 .ico-career:hover { width: 24px; height: 24px; background-position: -78px -48px; }
@@ -398,8 +408,8 @@ h3, h4, h5, h6 {
 .ico-ideas:hover { width: 22px; height: 24px; background-position: -107px 0; }
 .ico-ideas { width: 22px; height: 24px; background-position: -107px -25px; }
 
-.ico-hobbies:hover { width: 35px; height: 22px; background-position: -25px -23px; }
-.ico-hobbies { width: 35px; height: 22px; background-position: -25px 0; }
+.ico-travel:hover { width: 35px; height: 22px; background-position: -25px -23px; }
+.ico-travel { width: 35px; height: 22px; background-position: -25px 0; }
 
 .ico-contribute:hover { width: 35px; height: 22px; background-position: -25px -23px; }
 .ico-contribute { width: 35px; height: 22px; background-position: -25px 0; }

@@ -16,7 +16,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public class TestException {
 
 	
-	ReadWriteLock lock = new ReentrantReadWriteLock();
+	ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 	public static final void main(String[] argv)
 	{
 		
@@ -28,6 +28,8 @@ public class TestException {
 	
 	private String m1()
 	{
+		lock.readLock().lock();
+		
 		try
 		{
 			System.out.print("A");

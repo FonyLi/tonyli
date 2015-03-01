@@ -103,7 +103,7 @@ public class MarkovChain {
 	 */
 	public String makePoem(String prefix, String suffix)
 	{
-		return chain.generate(prefix, suffix);
+		return chain.generate(prefix.toLowerCase(), suffix.toLowerCase());
 	}
 	
 	/**

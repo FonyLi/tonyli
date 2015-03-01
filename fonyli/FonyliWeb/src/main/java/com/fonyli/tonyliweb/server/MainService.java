@@ -6,7 +6,6 @@ import java.lang.reflect.Field;
 import org.apache.log4j.Logger;
 import org.glassfish.grizzly.http.server.HttpHandler;
 import org.glassfish.grizzly.http.server.HttpServer;
-import org.glassfish.grizzly.http.server.StaticHttpHandler;
 
 import com.fonyli.tonyliweb.functions.markovchain.MarkovChain;
 import com.fonyli.tonyliweb.server.ds.HttpHandlerConstants;
