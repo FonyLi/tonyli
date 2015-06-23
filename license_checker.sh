@@ -1,5 +1,7 @@
 #!/bin/bash
 
+now=$(date +"%T")
+echo "$now : start to check license of cf components"
 #clear folder
 rm -rf ./*yml ./*.txt ./*.csv license
 mkdir license
@@ -46,6 +48,8 @@ do
   COMPONENT=$(echo $GIT | sed -r 's#git://github.com/(.*).git#\1#g');
   COMPONENT_PATH=$(echo "https://github.com/"$COMPONENT);
 
+  now=$(date +"%T")
+  echo "$now"
   echo "start to check component: $COMPONENT"
   LICENSE=$(echo "https://github.com/"$COMPONENT"/blob/master")
 
@@ -64,7 +68,7 @@ do
     
     curl $LICENSE_NAME >> $FILE_NAME
 
-    #if the file size is very small(actually the size is 21 for abnormal cases, so it is enough for us to set 25 here), normally it is like" {"error": "Not Found"} "..
+    #if the file size is very small (actually the size is 21 for abnormal case, so it is enough for us to set 25 here), normally it is somthing like " {"error" : "Not Found" } "..
     if [ -f $FILE_NAME ] && [ $(stat -c%s $FILE_NAME ) -gt 25 ]; #notice!!! after $FILE_NAME, there must be a space!
     then
       break
@@ -97,3 +101,7 @@ do
   fi
 
 done;
+
+
+now=$(date +"%T")
+echo "$now : end of checking license of cf components"
