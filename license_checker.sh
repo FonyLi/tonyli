@@ -1,14 +1,24 @@
 #!/bin/bash
 
-now=$(date +"%T")
-echo "$now : start to check license of cf components"
 #clear folder
-rm -rf ./*yml ./*.txt ./*.csv license
+rm -rf ./*yml ./*.txt ./*.log ./*.csv license
 mkdir license
 
-APACHE_LICENSE="Apache License, Version 2.0"
+LOG_FILE=./checker.log
+
+now=$(date +"%T")
+echo "$now : start to check license of cf components" >> $LOG_FILE
+
+APACHE_LICENSE="Apache License"
+LICENSE_VERSION="Version 2.0"
+
 MESSAGE_LICENSE_TEXT_FOUND="found"
+MESSAGE_LICENSE_FILE_NOT_FOUND="-"
 MESSAGE_LICENSE_TEXT_NOT_FOUND="-"
+MESSAGE_LICENSE_VERSION_NOT_CORRECT="wrong version"
+
+NUM_SUCC=0
+NUM_FAIL=0
 
 #add head to the csv file
 CSV_FILE="license_table.csv";
@@ -18,10 +28,10 @@ FILE_PATTERN="LICENSE license LICENSE.TXT LICENSE.txt License.txt license.txt LI
 echo "file pattern,$FILE_PATTERN" >> $CSV_FILE
 
 #we use apache license V2 currently.
-STRING_PATTERN=$APACHE_LICENSE
-echo "string pattern,$STRING_PATTERN" >> $CSV_FILE
+echo "license pattern,$APACHE_LICENSE" >> $CSV_FILE
+echo "version pattern,$LICENSE_VERSION" >> $CSV_FILE
 
-echo "Repository name,Does LICENSE file exist,License info(Apache License v2),URL" >> $CSV_FILE
+echo "Repository name,License file,License info,URL" >> $CSV_FILE
 
 curl https://api.github.com/orgs/cloudfoundry/repos?page=[1-6] >> repos.yml
 curl https://api.github.com/orgs/cloudfoundry-incubator/repos?page=[1-6] >> incubator_repos.yml
@@ -84,19 +94,31 @@ do
   if [ ! -f $FILE_NAME ] || [ $(stat -c%s $FILE_NAME ) -lt 25 ];
   then
     rm $FILE_NAME;
-    echo "for project $PROJECT_NAME " $LICENSE " doesn't exist" >> report.txt
-    echo "$COMPONENT,-,$MESSAGE_LICENSE_TEXT_NOT_FOUND,$COMPONENT_PATH" >> $CSV_FILE
-  else
-    #check if it includes apache license key word
-    if grep -q "$STRING_PATTERN" $FILE_NAME
+    echo "for component $COMPONENT " $LICENSE " doesn't exist!" >> $LOG_FILE
+    echo "$COMPONENT,$MESSAGE_LICENSE_FILE_NOT_FOUND,$MESSAGE_LICENSE_TEXT_NOT_FOUND,$COMPONENT_PATH" >> $CSV_FILE
+    NUM_FAIL=$(($NUM_FAIL + 1))
+  else 
+    #file exists
+    #check if it contains apache license key word
+    if grep -q "$APACHE_LICENSE" $FILE_NAME
+    then
+      #check if it contains correct version
+      if grep -q "$LICENSE_VERSION" $FILE_NAME
       then
-      #this component do have a license file with apache license
-      echo "$COMPONENT,$LICENSE_NAME,$MESSAGE_LICENSE_TEXT_FOUND,$COMPONENT_PATH" >> $CSV_FILE
-      echo "for project $PROJECT_NAME " $LICENSE " found. But it doesn't include Apache license." >> report.txt;
+        #this component do have a license file with apache license and correct version
+        echo "for component $COMPONENT " $LICENSE " is found. it contains Apache license with correct version." >> $LOG_FILE
+        echo "$COMPONENT,$LICENSE_NAME,$MESSAGE_LICENSE_TEXT_FOUND,$COMPONENT_PATH" >> $CSV_FILE
+        NUM_SUCC=$(($NUM_SUCC + 1))
+      else
+        #this component do have a license file with apache license, but with incorrect version
+        echo "for component $COMPONENT " $LICENSE " is found. it contains Apache license but with incorrect version!" >> $LOG_FILE
+        echo "$COMPONENT,$LICENSE_NAME,$MESSAGE_LICENSE_VERSION_NOT_CORRECT,$COMPONENT_PATH" >> $CSV_FILE
+        NUM_FAIL=$(($NUM_FAIL + 1))
+      fi
     else
-      #this component has a license file, but do not include apache license
+      echo "for component $COMPONENT " $LICENSE " is found. But it doesn't include Apache license!" >> $LOG_FILE
       echo "$COMPONENT,$LICENSE_NAME,$MESSAGE_LICENSE_TEXT_NOT_FOUND,$COMPONENT_PATH" >> $CSV_FILE
-      echo "for project $PROJECT_NAME " $LICENSE " found. Good" >> report.txt;
+      NUM_FAIL=$(($NUM_FAIL + 1))
     fi
   fi
 
@@ -104,4 +126,10 @@ done;
 
 
 now=$(date +"%T")
-echo "$now : end of checking license of cf components"
+echo "$now : end of checking license of cf components" >> $LOG_FILE
+
+
+echo " " >> $CSV_FILE
+echo "succ cases,$NUM_SUCC" >> $CSV_FILE
+echo "fail cases,$NUM_FAIL" >> $CSV_FILE
+
